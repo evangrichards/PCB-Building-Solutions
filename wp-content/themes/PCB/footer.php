@@ -1,3 +1,40 @@
+  <footer class="c-1">
+    <div class="inner">
+      <div class="c-1">
+        <div class="c-3">
+          <h6>Qualified Trusted <br />Tradesmen</h6>
+        </div>
+        <div class="c-3">
+          <h6>Builders in <br />Monmouthshire</h6>
+        </div>
+        <div class="c-3">
+          <?php bloginfo('name'); ?>
+        </div>
+      </div>
+
+      <div class="c-1">
+        <div class="c-3">
+          List of stuff & Contact details
+        </div>
+        <div class="c-3">
+          <ul>
+            <?php
+               wp_nav_menu( array(
+                'theme_location' => 'footer-menu',
+                'container' => 'false',
+                'items_wrap' => '%3$s',
+                'fallback_cb' => 'wp_page_menu'
+                ));
+            ?>
+          </ul>
+        </div>
+        <div class="c-3">
+          <?php bloginfo('name'); ?>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </div> <?php // end #wrapper ?>
 
 <script>

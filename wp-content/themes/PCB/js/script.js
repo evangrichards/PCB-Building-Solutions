@@ -2,6 +2,87 @@
 
 $(document).ready(function () {
 
+	// Slider
+	$(".rslides").responsiveSlides({
+		auto: true,
+		pager: false,
+		nav: true,
+		speed: 500,
+		prevText: "",
+  	nextText: ""
+	});
+
+	// Homepage height
+  var image_height = $('.slide img').height();
+  $('.page-content').css({
+      'margin-top': image_height
+  });
+
+	// Initiate fade in/out and slight movement on scroll of hero section on homepage
+	var $tagline = $('.hero h1');
+	var $nav = $('.rslides_nav');
+	var $home = $('.hero');
+	var $caption = $('.caption');
+	var windowScroll;
+
+	// Functional parallaxing calculations
+	function slidingTitle() {
+
+		//Get scroll position of window
+		windowScroll = $(this).scrollTop();
+
+		//Slow scroll of .art-header-inner scroll and fade it out
+		$tagline.css({
+			'margin-top' : -(windowScroll/3)-35+"px",
+			'opacity' : 1-(windowScroll/550)
+		});
+
+		//Slowly parallax the background of #home
+		$home.css({
+			'margin-top' : (-windowScroll/5)+"px"
+		});
+
+		//Fade the .nav out
+		$nav.css({
+			'margin-top' : -(windowScroll/18)+"px",
+			'opacity' : 1-(windowScroll/150)
+		});
+
+		$caption.css({
+			'margin-top' : -(windowScroll/18)+"px",
+			'opacity' : 1-(windowScroll/150)
+		});
+
+	}
+
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+
+		// dont run parallax effects
+
+		$tagline.css({
+			'position' : 'absolute'
+		});
+
+		$nav.css({
+			'position' : 'absolute'
+		});
+
+		$home.css({
+			'background-attachment' : 'scroll'
+		});
+
+		$caption.css({
+			'background-attachment' : 'scroll'
+		});
+
+	} else {
+
+		$(window).scroll(function() {
+			slidingTitle();
+		});
+
+	}
+
 	// Scroll to
 	$('.scrollto').click(function() {
 	   var elementClicked = $(this).attr("href");
@@ -60,4 +141,12 @@ $(document).ready(function () {
 
 	}
 
+});
+
+// Homepage height
+$(window).resize(function () {
+  var image_height = $('.slide img').height();
+  $('.page-content').css({
+      'margin-top': image_height
+  });
 });

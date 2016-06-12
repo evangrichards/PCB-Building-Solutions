@@ -51,8 +51,6 @@ html.noscroll { overflow-y: hidden !important; }
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.ico { background: url(img/sprite.png) no-repeat; }
-
 /* ==========================================================================
 2 Links
 ========================================================================= */
@@ -153,6 +151,178 @@ img.alignleft { float: left; margin-right: 30px; }
 
 		.single_column img.alignright.size-medium,
 		.single-column img.alignleft.size-medium { width: auto; }
+
+
+/* Icons */
+@font-face {
+  font-family: "pcb";
+  src:url("type/pcb.eot");
+  src:url("type/pcb.eot?#iefix") format("embedded-opentype"),
+    url("type/pcb.woff") format("woff"),
+    url("type/pcb.ttf") format("truetype"),
+    url("type/pcb.svg#pcb") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "pcb" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="i-"]:before,
+[class*=" i-"]:before,
+.rslides_nav.next:before,
+.rslides_nav.prev:before {
+  font-family: "pcb" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-send:before {
+  content: "\61";
+}
+.i-iphone:before {
+  content: "\62";
+}
+.i-arrow-down:before {
+  content: "\63";
+}
+.i-arrow-left:before,
+.rslides_nav.prev:before {
+  content: "\64";
+}
+.i-arrow-right:before,
+.rslides_nav.next:before {
+  content: "\65";
+}
+.i-arrow-up:before {
+  content: "\66";
+}
+.i-bricks:before {
+  content: "\67";
+}
+.i-chevron-down:before {
+  content: "\68";
+}
+.i-diamond:before {
+  content: "\69";
+}
+.i-minus:before {
+  content: "\6a";
+}
+.i-pen-pencil:before {
+  content: "\6b";
+}
+.i-plus:before {
+  content: "\6c";
+}
+.i-speechmark-close:before {
+  content: "\6d";
+}
+.i-speechmark-open:before {
+  content: "\6e";
+}
+.i-upload:before {
+  content: "\6f";
+}
+.i-workman:before {
+  content: "\70";
+}
+
+/*! Responsive slides - http://responsiveslides.com v1.54 by @viljamis */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+
+	.rslides_nav {
+		position: absolute;
+		bottom:75px;
+		left: 50%;
+		z-index: 2;
+		border: 2px solid #fff;
+		font-size: 24px;
+		padding: 11px 12px;
+		width: 50px;
+		height: 50px;
+		display: block;
+		overflow: hidden;
+		text-align: center;
+		color: #fff;
+	}
+
+		.rslides_nav:hover,
+		a.project-link:hover {
+			color: #fff;
+			opacity: .5
+		}
+
+		.rslides_nav.next { margin-left: -2px;}
+		.rslides_nav.prev { margin-left: -50px;}
+
+		p.caption {
+			position: absolute;
+			bottom:24px;
+			color: #fff;
+			font-style: italic;
+			text-align: center;
+			font-size: 12px;
+			width: 100%;
+			line-height:1.2em;
+		}
+
+			p.caption span { display: block; }
+			a.project-link {
+				display: inline-block;
+				color: #fff;
+				border-bottom: 1px solid #fff;
+				padding-bottom: 1px;
+			}
+
+
 
 /* ==========================================================================
 6 Forms
@@ -283,9 +453,8 @@ hr {
 
 /* /improvements */
 
-#wrapper {
-	padding-top: 115px;
-}
+#wrapper { padding-top: 115px; }
+	.page-template-homepage #wrapper { padding-top: 0;}
 
 header {
 	position: fixed;
@@ -293,6 +462,7 @@ header {
 	left: 30px;
 	right: 30px;
 	overflow: hidden;
+	z-index: 1;
 }
 
 	header .inner {
@@ -300,9 +470,20 @@ header {
 		padding: 30px;
 	}
 
+	.hero {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right:0;
+		z-index: 0;
+		background: #171717;
+	}
 
 
-
+	.page-content .inner {
+		background: #fff;
+		padding: 30px;
+	}
 
 
 
