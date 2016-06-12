@@ -1,0 +1,484 @@
+/*
+Theme Name: PCB Building Solutions Ltd
+Theme URI: http://pcb-building.co.uk/
+Description: Theme for PCB Building Solutions Ltd
+Author: By Association Only
+Author URI: http://byassociationonly.com
+Version: 1.0
+License: Use only for PCB Building Solutions Ltd
+Credits: Paul Irish http://html5boilerplate.com/
+*/
+
+/* ==========================================================================
+Contents:
+1 	Base
+2 	Links
+3 	Typography
+4 	Lists
+5 	Embedded content
+6 	Forms
+7 	Author's custom styles
+8 	IE fixes
+9		@Media
+========================================================================== */
+
+/* ==========================================================================
+1 Base
+========================================================================= */
+
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import 'css/normalize.css';
+
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	line-height: normal; }
+
+body { margin: 0; -webkit-tap-highlight-color: rgb(255,255,158); }
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: 'Karla', Helvetica, Arial, sans-serif;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #666; }
+
+html.noscroll { overflow-y: hidden !important; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.ico { background: url(img/sprite.png) no-repeat; }
+
+/* ==========================================================================
+2 Links
+========================================================================= */
+
+a,
+a:visited { color: #b59157; text-decoration: none; }
+a:hover { color: #999; }
+a:focus { outline: none; }
+
+a, a:visited, a:hover, a:active { outline: 0; outline: none; }
+
+
+
+/* ==========================================================================
+3 Typography
+========================================================================= */
+
+/* @group Global Font Styles */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "freight-display-pro", Georgia, Times, "Times New Roman", serif;
+	margin: 0 0 40px 0;
+	font-weight: 900;
+	line-height: 1.3em;
+	color: #171717;
+}
+
+h1 { font-size: 48px; line-height: 1.2em; }
+h2 { font-size: 36px; }
+h3 { font-size: 24px; }
+h4 { font-size: 22px; }
+h5 { font-size: 20px; }
+h6 { font-size: 18px; }
+
+p, ul, ol, blockquote { font-size: 16px; line-height: 1.6em; margin-bottom: 25px; }
+
+	p:last-child,
+	h1:last-child,
+	h2:last-child,
+	h3:last-child,
+	h4:last-child,
+	h5:last-child,
+	h6:last-child { margin-bottom:0; }
+
+/* @end */
+
+blockquote { padding: 10px 25px; border-left: 3px solid rgba(114, 114, 114, .25); }
+
+
+/* ==========================================================================
+4 Lists
+========================================================================= */
+
+ul, ol { list-style-type: disc; }
+ol { list-style-type: decimal; }
+nav ul { margin: 0; padding: 0; }
+
+nav ul { float: right; }
+	nav ul li { display: inline-block;}
+		nav ul li a,
+		nav ul li a:visited {
+			display: block;
+			color: #fff;
+		}
+
+
+/* ==========================================================================
+5 Embedded Content
+========================================================================= */
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.logo {
+	float: left;
+}
+
+audio,
+canvas,
+img,
+video { vertical-align: middle;}
+
+#burger { display: none; }
+
+/* Wordpress WYSIWYG Editor Classes */
+img.alignleft { float: left; margin-right: 30px; }
+	img.alignright { float: right; margin-left: 30px}
+	img.aligncenter { display: block; margin: 0 auto; }
+	img.alignnone { width: 100%; display: block;}
+
+	img.alignleft.size-thumbnail { width: 30%; margin-right: 5%; margin-bottom: 5%;}
+	img.alignleft.size-medium { width: 47%; margin-right: 5%; margin-bottom: 5%; }
+	img.alignright.size-medium { width: 47%; margin-left: 5%; margin-bottom: 5%; }
+
+		img.alignleft.size-medium:nth-of-type(2n) { margin-right: 0;}
+
+		.single_column img.alignright.size-medium,
+		.single-column img.alignleft.size-medium { width: auto; }
+
+/* ==========================================================================
+6 Forms
+========================================================================= */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+input[placeholder] { text-overflow: ellipsis; }
+::-moz-placeholder { text-overflow: ellipsis; } /* firefox 19+ */
+input:-moz-placeholder { text-overflow: ellipsis; }
+
+textarea {  resize: vertical; }
+
+input,
+textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius:0;
+	border-radius:0;
+}
+
+/* ==========================================================================
+7 Author's custom styles
+========================================================================= */
+
+/* Grid */
+
+.c-1 {
+	width: 100%;
+	clear: both;
+	overflow: hidden;
+	position: relative;
+}
+
+.c-2,
+.c-3,
+.c-4 {
+	width: 50%;
+	float: left;
+	position: relative;
+}
+
+	.c-3 { width: 33.33%; }
+	.c-4 { width: 25%; }
+
+/* /grid */
+
+/* @group Center all the things */
+
+.center-wrapper {
+	min-height: 100%;
+	padding: 0;
+	display: table;
+	width: 100%;
+}
+
+	.center-wrapper .center {
+		display: table-cell;
+  		vertical-align: middle;
+	}
+
+/* @end */
+
+/* @group Re-Usable classes */
+
+.inner {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+  overflow: hidden;
+}
+
+.left {	float: left; }
+.right { float: right; }
+
+.no-pad { padding: 0; }
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.bg-image {
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	 -moz-background-size: cover;
+	   -o-background-size: cover;
+	      background-size: cover;
+}
+
+/* @end */
+
+/* Improvements */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after { clear: both; }
+
+/* For IE 6/7 only */
+.clearfix { *zoom: 1; }
+
+/* /improvements */
+
+#wrapper {
+	padding-top: 115px;
+}
+
+header {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+	right: 30px;
+	overflow: hidden;
+}
+
+	header .inner {
+		background: #171717;
+		padding: 30px;
+	}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+8 IE Fixes
+========================================================================= */
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+/* ==========================================================================
+9 @Media
+========================================================================= */
+
+/* Huge screens */
+@media	screen and (min-width: 1301px) {
+
+
+}
+
+/* iPad portrait */
+@media	screen and (min-width: 641px) and (max-width: 959px) {
+
+	.bg-image { background-attachment: scroll; }
+
+}
+
+/* Smartphones */
+@media	screen and (max-width : 480px), /* Portrait */
+		screen and (max-width : 640px) /* Landscape */ {
+
+		/* @group Reset to normal positioning */
+
+		.center-wrapper,
+		.center {
+			width: 100%;
+			position: static;
+			float: left;
+			top: 0;
+			height: auto;
+			-webkit-transform: none !important;
+			    -ms-transform: none !important;
+			        transform: none !important;
+		}
+
+			.center {	padding-top: 150px;	}
+
+		/* @end */
+
+		.bg-image { background-attachment: scroll; }
+
+		#burger {
+			display: block;
+			position: absolute;
+			right: 20px;
+			top: 27px;
+			background-color: pink;
+			width: 30px;
+			height: 30px;
+			transition: none;
+			color: blue;
+		}
+
+			#burger.close {	color: aqua}
+
+			nav {
+		    width: 100%;
+		    padding: 0 20px;
+		    overflow: scroll;
+		    -webkit-overflow-scrolling: touch;
+		    position: fixed;
+		    top: 70px;
+		    left: 0;
+		    height: 100%;
+		    -webkit-transform: translateX(100%);
+		    -ms-transform: translateX(100%);
+		    transform: translateX(100%);
+				z-index: 2;
+		    background: #fff;
+		    -webkit-transition: all 0.2s;
+		    -moz-transition: all 0.2s;
+		    -ms-transition: all 0.2s;
+		    -o-transition: all 0.2s;
+		    transition: all 0.2s;
+			}
+
+			nav.mobile-open {
+				position: fixed;
+				border-top: 1px solid #f7f7f7;
+				-webkit-transform: translateX(0px);
+						-ms-transform: translateX(0px);
+								transform: translateX(0px);
+			}
+
+}
+
+/* High Resolution Devices */
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* Print */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
