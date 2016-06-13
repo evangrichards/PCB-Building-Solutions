@@ -56,11 +56,38 @@ html.noscroll { overflow-y: hidden !important; }
 ========================================================================= */
 
 a,
-a:visited { color: #b59157; text-decoration: none; }
-a:hover { color: #999; }
+a:visited {
+	color: #b59157;
+	text-decoration: none;
+	border-bottom: 1px solid #b59157;
+	padding-bottom:1px;
+	-webkit-transition: all 0.25s ease-in-out;
+	   -moz-transition: all 0.25s ease-in-out;
+	     -o-transition: all 0.25s ease-in-out;
+			    transition: all 0.25s ease-in-out;
+}
+a:hover { color: #999; border-color: #999; }
 a:focus { outline: none; }
 
+footer a,
+nav a { border: none;}
+
 a, a:visited, a:hover, a:active { outline: 0; outline: none; }
+
+.btn {
+	display:inline-block;
+	border-radius: 30px;
+	background: #b59157;
+	color: #fff;
+	text-align: center;
+	padding: 10px 25px;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: .08em;
+}
+
+	.btn:hover { color: #fff; background-color: #999; }
 
 
 
@@ -85,7 +112,7 @@ h4 { font-size: 22px; }
 h5 { font-size: 20px; }
 h6 { font-size: 18px; }
 
-p, ul, ol, blockquote { font-size: 16px; line-height: 1.6em; margin-bottom: 25px; }
+p, ul, ol, blockquote { font-size: 18px; line-height: 1.6em; margin-bottom: 25px; margin-top:0; }
 
 	p:last-child,
 	h1:last-child,
@@ -393,7 +420,7 @@ textarea {
 
 .inner {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1260px;
 	margin: 0 auto;
   overflow: hidden;
 }
@@ -470,20 +497,68 @@ header {
 		padding: 30px;
 	}
 
-	.hero {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right:0;
-		z-index: 0;
-		background: #171717;
+.hero {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right:0;
+	z-index: 0;
+	background: #171717;
+}
+
+.page-content { background: #fff; }
+
+.page-content .inner {
+	background: #fff;
+	padding: 80px 30px;
+}
+
+footer {
+	background: #171717;
+	color: #fff;
+	padding: 30px 0;
+}
+
+	footer .c-3:first-child { width: 60%; }
+	footer .c-3:nth-child(2),
+	footer .c-3:nth-child(3) { width: 20%; }
+
+	footer p { font-size: 16px; }
+		footer p.copy { opacity: .5; font-size: 14px;}
+
+	footer ul {
+		list-style: none;
+		margin: 0; padding:0;
 	}
 
-
-	.page-content .inner {
-		background: #fff;
-		padding: 30px;
+	footer a,
+	footer a:visited {
+		color: #fff;
+		font-size: 16px;
 	}
+
+		footer a:hover { color: #999; }
+		footer a.top i { margin-left: -4px; margin-right: 5px;}
+
+	.row {padding: 30px 0; }
+
+	.row-h {
+		border-bottom: 1px solid rgba(255,255,255, 0.5);
+		padding-bottom:30px;
+	}
+
+		.row-h h4 { color: #fff; }
+
+	.expertise { margin-bottom: 30px;}
+		.expertise p {
+			border-bottom: 1px solid rgba(255,255,255, 0.1);
+			max-width: 450px;
+			margin-bottom: 0;
+			padding: 10px 0;
+		}
+			.expertise p:first-child { padding-top: 0; }
+
+	.contact-cta p { color: #b59157; line-height: 1.2em; margin-left: 15px;}
 
 
 

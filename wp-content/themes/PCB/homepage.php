@@ -8,7 +8,7 @@ Template Name: Homepage
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<section class="hero">
+<section class="hero" id="hero">
 
     <?php if( have_rows('slides') ):?>
      	<div class="rslides">
@@ -35,10 +35,10 @@ Template Name: Homepage
 
     <h1>From Planning to Perfection</h1>
     <p>
-      More than just builders, PCB Building Solutions are an established firm of skilled tradesmen providing bespoke services including home rennovations, barn conversions, land & property searches, project management and much more.
+      More than just builders, <strong>PCB Building Solutions</strong> are an established firm of skilled tradesmen providing bespoke services including home rennovations, barn conversions, land & property searches, project management and much more.
     </p>
     <p>
-      How we can help you
+      <a href="#">How we can help you</a>
     </p>
   </div>
 </div>

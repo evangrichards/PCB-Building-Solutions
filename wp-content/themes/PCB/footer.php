@@ -1,21 +1,34 @@
   <footer class="c-1">
     <div class="inner">
-      <div class="c-1">
+      <div class="c-1 row-h">
         <div class="c-3">
-          <h6>Qualified Trusted <br />Tradesmen</h6>
+          <h4>Qualified Trusted <br />Tradesmen</h4>
         </div>
         <div class="c-3">
-          <h6>Builders in <br />Monmouthshire</h6>
+          <h4>Builders in <br />Monmouthshire</h4>
         </div>
         <div class="c-3">
           <?php bloginfo('name'); ?>
         </div>
       </div>
 
-      <div class="c-1">
+      <div class="c-1 row">
         <div class="c-3">
-          List of stuff & Contact details
+          <div class="c-1 expertise">
+            <p>
+              Free estimates
+            </p>
+            <p>
+              High quality work guaranteed
+            </p>
+            <p>
+              Fully insured
+            </p>
+          </div>
+
+          <?php include('parts/contact-cta.php'); ?>
         </div>
+
         <div class="c-3">
           <ul>
             <?php
@@ -28,8 +41,18 @@
             ?>
           </ul>
         </div>
+
         <div class="c-3">
-          <?php bloginfo('name'); ?>
+
+          <p class="copy">&copy; Copyright
+          <?php bloginfo('name') ?><br />
+          Company Reg No: 7954372<br />
+          VAT No: 131219651</p>
+
+          <p>
+          <a href="#hero" class="scrollto top"><i class="i-arrow-up"></i>Top</a>
+          </p>
+
         </div>
       </div>
     </div>
