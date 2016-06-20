@@ -2,28 +2,20 @@
     <div class="inner">
       <div class="c-1 row-h">
         <div class="c-3">
-          <h4>Qualified Trusted <br />Tradesmen</h4>
+          <h4><?php the_field('left_col_header', 'option'); ?></h4>
         </div>
         <div class="c-3">
-          <h4>Builders in <br />Monmouthshire</h4>
+          <h4><?php bloginfo('description'); ?></h4>
         </div>
         <div class="c-3">
-          <?php bloginfo('name'); ?>
+          <h4><?php bloginfo('name'); ?></h4>
         </div>
       </div>
 
       <div class="c-1 row">
         <div class="c-3">
           <div class="c-1 expertise">
-            <p>
-              Free estimates
-            </p>
-            <p>
-              High quality work guaranteed
-            </p>
-            <p>
-              Fully insured
-            </p>
+            <?php the_field('expertise_list', 'option'); ?>
           </div>
 
           <?php include('parts/contact-cta.php'); ?>
@@ -44,10 +36,12 @@
 
         <div class="c-3">
 
-          <p class="copy">&copy; Copyright
-          <?php bloginfo('name') ?><br />
-          Company Reg No: 7954372<br />
-          VAT No: 131219651</p>
+          <p class="copy">
+            &copy; Copyright
+            <?php bloginfo('name') ?><br />
+            Company Reg No: <?php the_field('company_reg', 'option'); ?>
+            <?php if (get_field('vat_no','option')) {?><br />VAT No: <?php the_field('vat_no', 'option'); ?><?php } ?>
+          </p>
 
           <p>
           <a href="#hero" class="scrollto top"><i class="i-arrow-up"></i>Top</a>

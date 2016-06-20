@@ -7,7 +7,7 @@
     <p>
       <em>or call</em>
       </br/>
-      <span class="tel">07800 916 234 / 01600 750 322</span>
+      <span class="tel"><?php the_field('primary_telephone', 'option'); ?><?php if (get_field('secondary_telephone','option')) {?> / <?php the_field('secondary_telephone', 'option'); ?><?php } ?></span>
     </p>
   </div>
 
