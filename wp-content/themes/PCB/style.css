@@ -437,7 +437,7 @@ textarea {
 
 .bg-image {
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position:  top left;
 	-webkit-background-size: cover;
 	 -moz-background-size: cover;
 	   -o-background-size: cover;
@@ -502,9 +502,22 @@ header {
 	top: 0;
 	left: 0;
 	right:0;
+	bottom:0;
 	z-index: 0;
-	background: #171717;
+	background-color: #171717;
 }
+
+		.page-template-homepage .hero { bottom: auto; }
+
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right:0;
+			bottom:0;
+			z-index: 1;
+			background: rgba(255, 0, 0, 0.5);
+		}
 
 .page-content { background: #fff; }
 
@@ -519,12 +532,12 @@ footer {
 	padding: 30px 0;
 }
 
-	footer .c-3:first-child { width: 60%; }
+	footer .c-3:first-child { width: 50%; }
 	footer .c-3:nth-child(2),
-	footer .c-3:nth-child(3) { width: 20%; }
+	footer .c-3:nth-child(3) { width: 25%; }
 
 	footer p { font-size: 16px; }
-		footer p.copy { opacity: .5; font-size: 14px;}
+		footer p.copy { opacity: .5;}
 
 	footer ul {
 		list-style: none;
