@@ -129,7 +129,8 @@ p, ul, ol, blockquote { margin-bottom: 40px; margin-top:0; }
 
 blockquote { padding: 10px 25px; border-left: 3px solid rgba(114, 114, 114, .25); }
 
-hgroup h2 { font-family: 'Karla', Helvetica, Arial, sans-serif; }
+hgroup h2,
+h5.page-title { font-family: 'Karla', Helvetica, Arial, sans-serif; }
 
 .contact-cta em { font-family: "freight-display-pro", Georgia, Times, "Times New Roman", serif; }
 
@@ -477,6 +478,25 @@ textarea {
 	      background-size: cover;
 }
 
+.rotate {
+  position: absolute;
+  top: 190px;
+  right: 100%;
+  white-space: nowrap;
+
+	-webkit-transform: rotate(270deg);
+  -webkit-transform-origin: right top;
+  -moz-transform: rotate(270deg);
+  -moz-transform-origin: right top;
+  -ms-transform: rotate(270deg);
+  -ms-transform-origin: right top;
+  -o-transform: rotate(270deg);
+  -o-transform-origin: right top;
+  transform: rotate(270deg);
+  transform-origin: right top;
+
+}
+
 /*
  * Flash animation
 */
@@ -597,6 +617,7 @@ header {
 
 	#page-content .inner {
 		background: #fff;
+		position: relative;
 		/*padding: 80px 30px;*/
 	}
 
@@ -657,7 +678,10 @@ footer {
 	main#page-content { overflow: visible !important; }
 
 	.primary-content:nth-child(even) {background: #171717; color: #fff;}
-		.primary-content:nth-child(even) h2 { color: #fff; border-color: #fff; }
+		.primary-content:nth-child(even) h2,
+		.primary-content:nth-child(even) h5.page-title { color: #fff; border-color: #fff; }
+		.primary-content:nth-child(even) #fixed { float: right; margin-left:0; }
+		.primary-content:nth-child(even) #fluid { padding-right: 0; }
 
 
 .primary-content .position-me { max-width: 950px; margin-top: -150px; }
@@ -676,6 +700,12 @@ footer {
 	.primary-content .contact-cta .left .btn { margin-bottom: 10px; max-width: 255px; width: 100%;}
 	.primary-content .contact-cta p { margin-left:0; }
 		.primary-content .contact-cta .left em { margin-bottom: 5px; display: inline-block;}
+
+	h5.page-title {
+		text-transform: uppercase;
+		font-size: 14px;
+		letter-spacing: 0.1em;
+	}
 
 
 
@@ -706,7 +736,10 @@ footer {
 
 	.bg-image { background-attachment: scroll; }
 
-	#fixed { margin-left: 0px; }
+	#fixed,
+	.primary-content:nth-child(even) #fluid { margin-left: 0px; }
+	.primary-content:nth-child(even) #fixed { margin-right: 40px; }
+	.primary-content:nth-child(even) #fluid { padding-left: 40px; }
 
 }
 

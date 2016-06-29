@@ -1,5 +1,6 @@
 <section class="primary-content c-1<?php $image = get_sub_field('image'); if( !empty($image) ) { ?> with-image<?php } else { ?> without-image<?php } ?>">
   <div class="inner">
+    <h5 class="rotate page-title"><?php the_title(); ?></h5>
     <div class="position-me">
 
       <?php if( have_rows('image_slider') ):?>
