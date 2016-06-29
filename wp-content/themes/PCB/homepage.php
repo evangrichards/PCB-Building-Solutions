@@ -16,12 +16,13 @@ Template Name: Homepage
         <?php while ( have_rows('slides') ) : the_row();
         $image = get_sub_field('image'); ?>
 
-          <li class="slide">
-            <?php if( !empty($image) ): ?>
-              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+          <?php if( !empty($image) ): ?>
+          <li class="slide bg-image" style="background-image: url('<?php echo $image['url']; ?>');">
+
               <p class="caption"><?php echo $image['alt']; ?> <span><a href="<?php the_sub_field('link'); ?>" class="project-link">View project</a></span></p>
-            <?php endif; ?>
+
           </li>
+          <?php endif; ?>
 
         <?php endwhile; ?>
         </ul>
@@ -30,7 +31,7 @@ Template Name: Homepage
 
 </section>
 
-<div class="page-content c-1">
+<div id="page-content" class="c-1">
   <div class="inner">
 
     <h1>From Planning to Perfection</h1>
@@ -40,6 +41,7 @@ Template Name: Homepage
     <p>
       <a href="#">How we can help you</a>
     </p>
+    
   </div>
 </div>
 

@@ -13,14 +13,14 @@ $(document).ready(function () {
 	});
 
 	// Homepage height
-  var image_height = $('.slide img').height();
-  $('.page-content').css({
-      'margin-top': image_height
+	var window_height = $(window).height();
+	$('#page-content').css({
+      'margin-top': window_height
   });
 
 	// Initiate fade in/out and slight movement on scroll of hero section on homepage
-	var $tagline = $('.hero h1');
-	var $nav = $('.rslides_nav');
+	var $tagline = $('.hero hgroup');
+	var $nav = $('.hero .rslides_nav');
 	var $home = $('.hero');
 	var $caption = $('.caption');
 	var windowScroll;
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 		//Slow scroll of .art-header-inner scroll and fade it out
 		$tagline.css({
-			'margin-top' : -(windowScroll/3)-35+"px",
+			'margin-top' : -(windowScroll/3)+"px",
 			'opacity' : 1-(windowScroll/550)
 		});
 
@@ -44,13 +44,11 @@ $(document).ready(function () {
 
 		//Fade the .nav out
 		$nav.css({
-			'margin-top' : -(windowScroll/18)+"px",
-			'opacity' : 1-(windowScroll/150)
+			'opacity' : 1-(windowScroll/100)
 		});
 
 		$caption.css({
-			'margin-top' : -(windowScroll/18)+"px",
-			'opacity' : 1-(windowScroll/150)
+			'opacity' : 1-(windowScroll/40)
 		});
 
 	}
@@ -82,6 +80,25 @@ $(document).ready(function () {
 		});
 
 	}
+
+	// Stickykit
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+
+  } else {
+
+		if ($(window).width() > 670) {
+			if ($(window).width() < 1024 ) {
+				 $(".sticky").stick_in_parent({
+				    offset_top: 95
+				 });
+			} else {
+			 	$(".sticky").stick_in_parent({
+				 offset_top: 150
+				});
+			}
+		}
+
+  }
 
 	// Scroll to
 	$('.scrollto').click(function() {
@@ -145,8 +162,8 @@ $(document).ready(function () {
 
 // Homepage height
 $(window).resize(function () {
-  var image_height = $('.slide img').height();
-  $('.page-content').css({
-      'margin-top': image_height
+	var window_height = $(window).height();
+	$('#page-content').css({
+      'margin-top': window_height
   });
 });

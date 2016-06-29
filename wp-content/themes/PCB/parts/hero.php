@@ -1,12 +1,15 @@
 <section class="hero bg-image" id="hero" <?php $image = get_field('image'); if( !empty($image) ): ?>style="background-image: url('<?php echo $image['url']; ?>');"<?php endif; ?>>
-
-  <hgroup>
-    <h1><?php the_field('heading'); ?></h1>
-    <?php if (get_field('sub_heading')) {?><h2><?php the_field('sub_heading'); ?></h2><?php } ?>
-  </hgroup>
+  <div class="inner">
+    <hgroup class="center-wrapper">
+      <div class="center">
+        <h1><?php the_field('heading'); ?></h1>
+        <?php if (get_field('sub_heading')) {?><h2><?php the_field('sub_heading'); ?></h2><?php } ?>
+        <a href="#page-content" class="scrollto animated flash"><i class="i-arrow-down"></i></a>
+      </div>
+    </hgroup>
+  </div>
 
   <?php if( get_field('add_overlay') ) {?>
     <div class="overlay"></div>
   <?php }?>
-
 </section>
