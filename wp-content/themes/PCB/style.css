@@ -447,6 +447,7 @@ textarea {
 	max-width: 1260px;
 	margin: 0 auto;
   overflow: hidden;
+	position: relative;
 }
 
 #fixed {
@@ -563,7 +564,7 @@ header {
 	left: 30px;
 	right: 30px;
 	overflow: hidden;
-	z-index: 5;
+	z-index: 10;
 }
 
 	header .inner {
@@ -573,11 +574,11 @@ header {
 
 .hero {
 	position: fixed;
-	top: 0;
-	left: 0;
-	right:0;
-	bottom:0;
-	z-index: 0;
+	z-index: 9;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 	background-color: #171717;
 }
 
@@ -613,11 +614,15 @@ header {
 				margin-left: -10px;
 			}
 
-#page-content { background: #fff; }
+#content {
+	background: #fff;
+	position: relative;
+  z-index: 10;
+  top: calc( 100vh);
+}
 
-	#page-content .inner {
+	#content .inner {
 		background: #fff;
-		position: relative;
 		/*padding: 80px 30px;*/
 	}
 
@@ -675,11 +680,10 @@ footer {
 
 	.primary-content,
 	.primary-content .inner,
-	main#page-content { overflow: visible !important; }
+	main#content { overflow: visible !important; }
 
 	.primary-content:nth-child(even) {background: #171717; color: #fff;}
-		.primary-content:nth-child(even) h2,
-		.primary-content:nth-child(even) h5.page-title { color: #fff; border-color: #fff; }
+		.primary-content:nth-child(even) h2 { color: #fff; border-color: #fff; }
 		.primary-content:nth-child(even) #fixed { float: right; margin-left:0; }
 		.primary-content:nth-child(even) #fluid { padding-right: 0; }
 
@@ -701,11 +705,11 @@ footer {
 	.primary-content .contact-cta p { margin-left:0; }
 		.primary-content .contact-cta .left em { margin-bottom: 5px; display: inline-block;}
 
-	h5.page-title {
-		text-transform: uppercase;
-		font-size: 14px;
-		letter-spacing: 0.1em;
-	}
+		h5.page-title {
+			text-transform: uppercase;
+			font-size: 14px;
+			letter-spacing: 0.1em;
+		}
 
 
 

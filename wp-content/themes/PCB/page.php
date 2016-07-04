@@ -4,7 +4,7 @@
 
 <?php include('parts/hero.php'); ?>
 
-<main id="page-content" class="c-1 left">
+<main id="content" class="c-1 left">
 
     <?php include('parts/layouts.php'); ?>
 

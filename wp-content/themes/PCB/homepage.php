@@ -31,7 +31,7 @@ Template Name: Homepage
 
 </section>
 
-<div id="page-content" class="c-1">
+<section id="content" class="c-1">
   <div class="inner">
 
     <h1>From Planning to Perfection</h1>
@@ -41,9 +41,9 @@ Template Name: Homepage
     <p>
       <a href="#">How we can help you</a>
     </p>
-    
+
   </div>
-</div>
+</section>
 
 <?php endwhile; endif; ?>
 

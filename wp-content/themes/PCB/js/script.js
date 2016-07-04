@@ -12,12 +12,6 @@ $(document).ready(function () {
   	nextText: ""
 	});
 
-	// Homepage height
-	var window_height = $(window).height();
-	$('#page-content').css({
-      'margin-top': window_height
-  });
-
 	// Initiate fade in/out and slight movement on scroll of hero section on homepage
 	var $tagline = $('.hero hgroup');
 	var $nav = $('.hero .rslides_nav');
@@ -158,12 +152,4 @@ $(document).ready(function () {
 
 	}
 
-});
-
-// Homepage height
-$(window).resize(function () {
-	var window_height = $(window).height();
-	$('#page-content').css({
-      'margin-top': window_height
-  });
 });
