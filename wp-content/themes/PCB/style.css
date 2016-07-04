@@ -585,7 +585,7 @@ header {
 		.hero .inner { height: 100%; }
 
 		.overlay {
-			position: fixed;
+			position: absolute;
 			top: 0;
 			left: 0;
 			right:0;
@@ -617,8 +617,9 @@ header {
 #content {
 	background: #fff;
 	position: relative;
-  z-index: 10;
+  z-index: 9;
   top: calc( 100vh);
+  margin-bottom: 403px;
 }
 
 	#content .inner {
@@ -631,6 +632,13 @@ footer {
 	background: #171717;
 	color: #fff;
 	padding: 30px 0;
+	position: fixed;
+	z-index: 8;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+  clear: both;
+  overflow: hidden;
 }
 
 	footer .c-3:first-child { width: 50%; }
@@ -677,6 +685,8 @@ footer {
 
 /* Section types */
 .primary-content { padding: 0 0 200px 0; float:left; }
+
+	.primary-content:last-of-type { padding-bottom: 50px; }
 
 	.primary-content,
 	.primary-content .inner,

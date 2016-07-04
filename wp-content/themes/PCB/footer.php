@@ -1,4 +1,4 @@
-  <footer class="c-1">
+  <footer>
     <div class="inner">
       <div class="c-1 row-h">
         <div class="c-3">
