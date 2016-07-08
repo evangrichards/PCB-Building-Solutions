@@ -175,6 +175,12 @@ function remove_thumbnail_dimensions( $html ) {
  		'parent_slug'	=> 'theme-general-settings',
  	));
 
+  acf_add_options_sub_page(array(
+ 		'page_title' 	=> 'Testimonials',
+ 		'menu_title'	=> 'Testimonials',
+ 		'parent_slug'	=> 'theme-general-settings',
+ 	));
+
  }
 
 /**

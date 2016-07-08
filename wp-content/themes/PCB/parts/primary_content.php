@@ -30,4 +30,14 @@
 
     </div>
   </div>
+
+  <?php if( get_sub_field('show_get_in_touch') ){ ?>
+    <section class="c-1 generic-cta">
+      <div class="inner">
+        <?php the_sub_field('text'); ?>
+        <?php include('contact-cta.php'); ?>
+      </div>
+    </section>
+  <?php } ?>
+  
 </section>

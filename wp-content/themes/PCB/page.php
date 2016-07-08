@@ -8,6 +8,8 @@
 
     <?php include('parts/layouts.php'); ?>
 
+    <?php include('parts/page-links.php'); ?>
+
 </main>
 
 <?php endwhile; endif; ?>
