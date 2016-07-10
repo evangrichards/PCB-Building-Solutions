@@ -132,7 +132,8 @@ blockquote { padding: 10px 25px; border-left: 3px solid rgba(114, 114, 114, .25)
 hgroup h2,
 h5.page-title { font-family: 'Karla', Helvetica, Arial, sans-serif; }
 
-.contact-cta em { font-family: "freight-display-pro", Georgia, Times, "Times New Roman", serif; }
+.contact-cta em,
+blockquote { font-family: "freight-display-pro", Georgia, Times, "Times New Roman", serif; }
 
 
 /* ==========================================================================
@@ -695,7 +696,7 @@ footer {
 /* Section types */
 .primary-content { padding: 0 0 200px 0; float:left; }
 
-	.primary-content:last-of-type { padding-bottom: 0; }
+	.primary-content:last-of-type { padding-bottom: 50px; }
 
 	.primary-content,
 	.primary-content .inner,
@@ -808,6 +809,34 @@ footer {
 		left: 0;
 		width: 100%;
 	}
+
+/* Single.php */
+.single-post #content .inner { overflow: visible; }
+.project-images { padding-top: 10px;}
+.project-images img { width: 100%; max-width: none; margin-bottom: 30px; }
+.project-content { padding: 0 30px 30px 30px; }
+.meta {margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+	.meta:first-of-type { border-top: 1px solid #eee; padding-top: 20px; }
+.meta h5 { font-family: 'Karla', Helvetica, Arial, sans-serif; text-transform: uppercase; font-size: 12px; margin-bottom: 0; letter-spacing: .05em;}
+.post-links { padding: 30px; background: #fff; margin-top: -80px; margin-bottom: 20px; }
+	.post-links a { border: none; padding: 0; }
+		.post-links i { font-size: 20px; position: relative; margin-right: 5px; top: 5px; }
+
+/* Testimonials */
+#testimonials { background: #f8f8f8; padding: 50px; }
+#testimonials .rslides li { padding:0 0 80px 0; }
+#testimonials blockquote { border: none; padding: 0; margin: 0 0 20px 0; font-size: 48px; font-weight: 800; color: #171717; line-height: 1.2em}
+
+#testimonials .rslides_nav {
+	bottom:0;
+	left: 0;
+	color: #b59157;
+	border-color: #b59157;
+}
+
+	#testimonials .rslides_nav:hover { opacity: 1; color: #999; border-color: #999;}
+	#testimonials .rslides_nav.next { margin-left: 48px;}
+	#testimonials .rslides_nav.prev { margin-left: 0px;}
 
 
 /* ==========================================================================

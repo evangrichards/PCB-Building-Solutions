@@ -7,8 +7,8 @@
 <main id="content" class="c-1 left">
 
     <?php include('parts/layouts.php'); ?>
-
     <?php include('parts/page-links.php'); ?>
+    <?php include('parts/testimonials.php'); ?>
 
 </main>
 

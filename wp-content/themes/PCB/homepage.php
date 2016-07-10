@@ -43,6 +43,8 @@ Template Name: Homepage
     </p>
 
   </div>
+
+  <?php include('parts/testimonials.php'); ?>
 </section>
 
 <?php endwhile; endif; ?>
