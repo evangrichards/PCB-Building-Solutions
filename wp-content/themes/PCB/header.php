@@ -5,7 +5,12 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<?php if( is_category() ) { ?>
+<script src="<?php bloginfo('template_url'); ?>/js/masonry.pkgd.min.js"></script>
+<?php } ?>
+<![endif]-->
 
 <title><?php if (is_front_page()){ ?>
     <?php bloginfo('name');?> &#10072; <?php bloginfo('description'); ?>

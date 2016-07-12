@@ -126,7 +126,7 @@ function add_wp3menu_support() {
 register_nav_menus(
         array(
         'main-menu' => __('Primary Navigation'),
-        'footer-menu' => __('Footer menu'),
+        'footer-menu' => __('Footer menu')
         )
      );
 }

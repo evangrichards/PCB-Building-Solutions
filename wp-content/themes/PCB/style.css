@@ -130,7 +130,8 @@ p, ul, ol, blockquote { margin-bottom: 30px; margin-top:0; }
 blockquote { padding: 10px 25px; border-left: 3px solid rgba(114, 114, 114, .25); }
 
 hgroup h2,
-h5.page-title { font-family: 'Karla', Helvetica, Arial, sans-serif; }
+h5.page-title,
+.grid-item h2 { font-family: 'Karla', Helvetica, Arial, sans-serif; }
 
 .contact-cta em,
 blockquote { font-family: "freight-display-pro", Georgia, Times, "Times New Roman", serif; }
@@ -700,7 +701,8 @@ footer {
 
 	.primary-content,
 	.primary-content .inner,
-	main#content { overflow: visible !important; }
+	main#content,
+	.category .inner { overflow: visible !important; }
 
 	.primary-content:nth-child(even) {background: #171717; color: #fff;}
 		.primary-content:nth-child(even) h2 { color: #fff; border-color: #fff; }
@@ -812,7 +814,7 @@ footer {
 
 /* Single.php */
 .single-post #content .inner { overflow: visible; }
-.project-images { padding-top: 10px;}
+.project-images { padding-top: 10px; padding-right: 30px;}
 .project-images img { width: 100%; max-width: none; margin-bottom: 30px; }
 .project-content { padding: 0 30px 30px 30px; }
 .meta {margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
@@ -837,6 +839,28 @@ footer {
 	#testimonials .rslides_nav:hover { opacity: 1; color: #999; border-color: #999;}
 	#testimonials .rslides_nav.next { margin-left: 48px;}
 	#testimonials .rslides_nav.prev { margin-left: 0px;}
+
+/* Category */
+.map { background: pink; padding: 30em 0 }
+.grid { /* Masonry container */
+    column-count: 4;
+    column-gap: 30px;
+		padding-top: 30px;
+}
+
+a.grid-item { /* Masonry bricks or child elements */
+    display: inline-block;
+    margin: 0 0 30px 0;
+    width: 100%;
+		border: none;
+		color: #999;
+}
+
+	.grid-item img { margin-bottom: 10px; }
+
+	.grid-item h2,
+	.grid-item p { margin-bottom: 0; font-size: 18px;}
+
 
 
 /* ==========================================================================
