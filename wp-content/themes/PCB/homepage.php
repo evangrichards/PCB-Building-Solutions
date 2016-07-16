@@ -31,21 +31,22 @@ Template Name: Homepage
 
 </section>
 
-<section id="content" class="c-1">
+<div id="content" class="c-1">
   <div class="inner">
-
-    <h1>From Planning to Perfection</h1>
-    <p>
-      More than just builders, <strong>PCB Building Solutions</strong> are an established firm of skilled tradesmen providing bespoke services including home rennovations, barn conversions, land & property searches, project management and much more.
-    </p>
-    <p>
-      <a href="#">How we can help you</a>
-    </p>
+    <section class="c-1">
+      <h1>From Planning to Perfection</h1>
+      <p>
+        More than just builders, <strong>PCB Building Solutions</strong> are an established firm of skilled tradesmen providing bespoke services including home rennovations, barn conversions, land & property searches, project management and much more.
+      </p>
+      <p>
+        <a href="#">How we can help you</a>
+      </p>
+    </section>
 
   </div>
 
   <?php include('parts/testimonials.php'); ?>
-</section>
+</div>
 
 <?php endwhile; endif; ?>
 

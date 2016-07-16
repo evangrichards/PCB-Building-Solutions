@@ -42,6 +42,31 @@ $role_object = get_role( 'editor' );
 $role_object->add_cap( 'edit_theme_options' );
 
 /**
+ * @desc Add tag called 'All' to all posts
+ *
+add_action('save_post','add_tags_auto');
+function add_tags_auto($id) {
+	$add_tags = array(
+		'All'
+	);
+	$temp = array();
+	$tags = get_the_tags($id);
+	foreach ($tags as $tag)
+		$temp[] = $tag->name;
+	$tags = $temp;
+
+	$post = get_post($id);
+
+	if ($post->post_type != 'post')
+		return false;
+
+	foreach ($add_tags as $t)
+		if (!in_array($t,$tags))
+			wp_add_post_tags($id,$add_tags);
+}
+*/
+
+/**
  * @desc Change email address (that sends out registration emails etc.) from wordpress@mydomain.com to whatever I want
  **/
 

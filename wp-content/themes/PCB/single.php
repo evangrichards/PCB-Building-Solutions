@@ -9,7 +9,7 @@
 
     <div class="c-1 post-links">
       <div class="c-2">
-        <a href="/category/projects/" class="left" title="Back to all projects"><i class="i-arrow-left"></i>Back to all projects</a>
+        <a href="/tags/all/" class="left" title="Back to all projects"><i class="i-arrow-left"></i>Back to all projects</a>
       </div>
       <div class="c-2">
         <?php previous_post_link('%link', '- Previous', TRUE); ?>

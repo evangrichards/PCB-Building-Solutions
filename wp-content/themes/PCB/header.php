@@ -45,7 +45,7 @@
 
 <header>
   <div class="inner">
-    <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="ico logo"><?php bloginfo('name'); ?></a>
+    <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="ico logo"><img src="<?php bloginfo('template_url'); ?>/img/logo.png"/></a>
 
     <nav>
       <ul>
@@ -57,6 +57,9 @@
             'fallback_cb' => 'wp_page_menu'
             ));
         ?>
+        <li>
+          <a href="tel:<?php the_field('primary_telephone', 'option'); ?>" class="tel" title="Call today for your free quote"><?php the_field('primary_telephone', 'option'); ?></a><?php if (get_field('secondary_telephone','option')) {?> / <a href="tel:<?php the_field('secondary_telephone', 'option'); ?>" class="tel" title="Call today for your free quote"><?php the_field('secondary_telephone', 'option'); ?></a><?php } ?>
+        </li>
       </ul>
     </nav>
     <button id="burger"><i class="i-menu"></i></button>

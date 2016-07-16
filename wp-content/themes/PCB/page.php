@@ -6,7 +6,9 @@
 
 <main id="content" class="c-1 left">
 
-    <?php include('parts/layouts.php'); ?>
+    <div class="page-content">
+      <?php include('parts/layouts.php'); ?>
+    </div>
     <?php include('parts/page-links.php'); ?>
     <?php include('parts/testimonials.php'); ?>
 

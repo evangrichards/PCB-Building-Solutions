@@ -2,7 +2,13 @@
   <div class="inner">
     <hgroup class="center-wrapper">
       <div class="center">
-        <h1><?php the_field('heading'); ?></h1>
+        <h1>
+          <?php if (get_field('heading')) {?>
+            <?php the_field('heading'); ?>
+          <?php } else { ?>
+            <?php the_title(); ?>
+          <?php } ?>
+        </h1>
         <?php if (get_field('sub_heading')) {?><h2><?php the_field('sub_heading'); ?></h2><?php } ?>
         <a href="#page-content" class="scrollto animated flash"><i class="i-arrow-down"></i></a>
       </div>
