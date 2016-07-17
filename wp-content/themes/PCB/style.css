@@ -119,7 +119,7 @@ h6,
 p, ul, ol, blockquote,
 hgroup h2 { font-size: 18px; line-height: 1.6em;}
 
-p, ul, ol, blockquote { margin-bottom: 30px; margin-top:0; }
+p, ul, ol, blockquote { margin-bottom: 20px; margin-top:0; }
 
 	p:last-child,
 	h1:last-child,
@@ -723,7 +723,7 @@ footer {
 		section:nth-child(even) #fixed { float: right; margin-left:0; }
 		section:nth-child(even) #fluid { padding-right: 0; }
 
-.position-me { max-width: 950px; margin-top: -150px; }
+.position-me { max-width: 950px; width: 100%; margin-top: -150px; }
 	section:nth-child(even) .position-me { float: left; }
 	section:nth-child(odd) .position-me{ float: right; }
 
@@ -898,6 +898,27 @@ a.grid-item { /* Masonry bricks or child elements */
 .filters ul li { display: inline-block; margin: 0 25px 0 0; padding:0; }
 .filter ul li a { color: #222; }
 
+/* Contact */
+.page-template-contact section:nth-child(odd) .position-me { float: left; }
+.page-template-contact p { margin-bottom: 10px;  }
+
+.page-template-contact #fixed { margin: 0; padding: 0; width: 350px; }
+	.page-template-contact #fixed p { font-size: 18px; border-bottom: 1px solid #e4e4e4; padding-bottom:10px; line-height: 1em; }
+		.page-template-contact #fixed a { border: none; padding: 0; }
+
+	.page-template-contact #fixed .inside-left {
+		float: left;
+	  width: 90px;
+	}
+
+	.page-template-contact #fixed .inside-right { overflow:hidden; }
+
+.page-template-contact #fixed .disclaimer p {
+	border: none;
+	font-size: 14px;
+	color: #a6a6a6;
+	line-height: 1.4em;
+}
 
 /* ==========================================================================
 8 IE Fixes
