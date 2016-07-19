@@ -51,6 +51,16 @@ html.noscroll { overflow-y: hidden !important; }
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+input, textarea,
+a,
+button {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
 /* ==========================================================================
 2 Links
 ========================================================================= */
@@ -63,7 +73,6 @@ nav ul li a.tel {
 	color: #b59157;
 	text-decoration: none;
 	border-bottom: 1px solid #b59157;
-	padding-bottom:1px;
 	-webkit-transition: all 0.25s ease-in-out;
 	   -moz-transition: all 0.25s ease-in-out;
 	     -o-transition: all 0.25s ease-in-out;
@@ -79,7 +88,8 @@ nav a { border: none;}
 
 a, a:visited, a:hover, a:active { outline: 0; outline: none; }
 
-.btn {
+.btn,
+.wpcf7-submit {
 	display:inline-block;
 	border-radius: 30px;
 	background: #b59157;
@@ -117,7 +127,7 @@ h4 { font-size: 22px; }
 h5 { font-size: 20px; }
 h6,
 p, ul, ol, blockquote,
-hgroup h2 { font-size: 18px; line-height: 1.6em;}
+hgroup h2 { font-size: 18px; line-height: 1.5em;}
 
 p, ul, ol, blockquote { margin-bottom: 20px; margin-top:0; }
 
@@ -397,9 +407,9 @@ fieldset {
     padding: 0;
 }
 
-input[placeholder] { text-overflow: ellipsis; }
-::-moz-placeholder { text-overflow: ellipsis; } /* firefox 19+ */
-input:-moz-placeholder { text-overflow: ellipsis; }
+input[placeholder] {  text-overflow: ellipsis; }
+::-moz-placeholder {  text-overflow: ellipsis; } /* firefox 19+ */
+input:-moz-placeholder {  text-overflow: ellipsis; }
 
 textarea {  resize: vertical; }
 
@@ -408,7 +418,107 @@ textarea {
 	-webkit-appearance: none;
 	-webkit-border-radius:0;
 	border-radius:0;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	background: #fff;
+	color: #666;
+	padding: 10px;
 }
+
+input:focus,
+textarea:focus { outline:none; border-color: #b59157; }
+
+.file-upload {
+	min-height: 100px;
+	border: 1px solid #e1e1e1;
+	background: white;
+	padding: 100px 30px 30px 30px;
+	margin-bottom: 10px;
+}
+
+.page-template-contact p.hide_this {
+	float: left;
+	width: 18.55%;
+	margin: 0 1.75% 0 0;
+	height: 120px;
+	border-radius: 4px;
+	position: relative;
+}
+
+	p.hide_this.last { margin-right: 0;}
+
+.js .wpcf7-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+	.no-js .wpcf7-file + label {
+			display: none;
+	}
+
+.wpcf7-form-control-wrap + label {
+    font-size: 18px;
+    font-weight: 400;
+		border-radius: 4px;
+    color: #999;
+    background-color: #f8f8f8;
+    display: inline-block;
+		cursor: pointer;
+		height:100%; width: 100%;
+		text-align: center;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+}
+
+.wpcf7-form-control-wrap label, /* cannot target? */
+.wpcf7-form-control-wrap + label:hover {
+    background-color: #b59157;
+		color: #fff;
+}
+
+.wpcf7-form-control-wrap + label * {
+	pointer-events: none;
+}
+
+label span {
+	position: absolute;
+  bottom: 30px;
+  font-size: 16px;
+  left: 0;
+  width: 100%;
+}
+	label i {
+		font-size: 34px;
+    top: 30px;
+    position: relative;
+		color: #b5b5b5
+	}
+
+	.wpcf7-form-control-wrap + label:hover i { color: #fff; }
+.add_file { position: absolute; top:20px; left:30px; }
+.del_file {
+	font-size: 14px;
+	line-height: 1em;
+  background: #fff;
+  top: -20px;
+  position: relative;
+  padding: 1px 7px 1px 5px;
+  border: none;
+}
+
+.wpcf7-submit {
+	border: none;
+	max-width: 200px;
+}
+
+section.grey-content .position-me p.notice { font-size: 14px; display: block; width: 100%; position: absolute; top:63px; left:30px; color: #a8a8a8; }
 
 /* ==========================================================================
 7 Author's custom styles
@@ -456,7 +566,7 @@ textarea {
 
 .inner {
 	width: 100%;
-	max-width: 1260px;
+	max-width: 1400px;
 	margin: 0 auto;
   overflow: hidden;
 	position: relative;
@@ -470,7 +580,7 @@ textarea {
   margin-left: -40px;
 }
 
-#fluid { overflow:hidden; padding: 0 40px; }
+#fluid { overflow:hidden; padding: 0 0 0 40px; }
 
 .keyline {
 	display: block;
@@ -723,7 +833,7 @@ footer {
 		section:nth-child(even) #fixed { float: right; margin-left:0; }
 		section:nth-child(even) #fluid { padding-right: 0; }
 
-.position-me { max-width: 950px; width: 100%; margin-top: -150px; }
+.position-me { max-width: 1100px; width: 100%; margin-top: -150px; }
 	section:nth-child(even) .position-me { float: left; }
 	section:nth-child(odd) .position-me{ float: right; }
 
@@ -900,6 +1010,9 @@ a.grid-item { /* Masonry bricks or child elements */
 
 /* Contact */
 .page-template-contact section:nth-child(odd) .position-me { float: left; }
+
+.page-template-contact .position-me { max-width: none; }
+
 .page-template-contact p { margin-bottom: 10px;  }
 
 .page-template-contact #fixed { margin: 0; padding: 0; width: 350px; }

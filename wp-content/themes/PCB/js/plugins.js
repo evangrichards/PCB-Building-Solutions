@@ -16,3 +16,34 @@ u=a.outerHeight(!0),r=a.css("float"),h&&h.css({width:a.outerWidth(!0),height:u,d
 h.detach()),b={position:"",width:"",top:""},a.css(b).removeClass(t).trigger("sticky_kit:unstick")),B&&(b=f.height(),u+q>b&&!v&&(c-=l,c=Math.max(b-u,c),c=Math.min(q,c),m&&a.css({top:c+"px"})))):e>F&&(m=!0,b={position:"fixed",top:c},b.width="border-box"===a.css("box-sizing")?a.outerWidth()+"px":a.width()+"px",a.css(b).addClass(t),null==p&&(a.after(h),"left"!==r&&"right"!==r||h.append(a)),a.trigger("sticky_kit:stick")),m&&w&&(null==k&&(k=e+u+c>C+n),!v&&k)))return v=!0,"static"===g.css("position")&&g.css({position:"relative"}),
 a.css({position:"absolute",bottom:d,top:"auto"}).trigger("sticky_kit:bottom")},y=function(){x();return l()},H=function(){G=!0;f.off("touchmove",l);f.off("scroll",l);f.off("resize",y);b(document.body).off("sticky_kit:recalc",y);a.off("sticky_kit:detach",H);a.removeData("sticky_kit");a.css({position:"",bottom:"",top:"",width:""});g.position("position","");if(m)return null==p&&("left"!==r&&"right"!==r||a.insertAfter(h),h.remove()),a.removeClass(t)},f.on("touchmove",l),f.on("scroll",l),f.on("resize",
 y),b(document.body).on("sticky_kit:recalc",y),a.on("sticky_kit:detach",H),setTimeout(l,0)}};n=0;for(K=this.length;n<K;n++)d=this[n],J(b(d));return this}}).call(this);
+
+/* Add multiple files to contact form */
+//hide all inputs except the first one
+$('p.hide_this').not(':eq(0)').hide();
+
+//functionality for add-file link
+$('a.add_file').on('click', function(e){
+  //show by click the first one from hidden inputs
+  $('p.hide_this:not(:visible):first').show('slow');
+  e.preventDefault();
+});
+
+//functionality for del-file link
+$('a.del_file').on('click', function(e){
+  //var init
+  var input_parent = $(this).parent();
+  var input_wrap = input_parent.find('span');
+  //reset field value
+  input_wrap.html(input_wrap.html());
+  //hide by click
+  input_parent.hide('slow');
+  e.preventDefault();
+});
+
+$(document).ready(function(){
+  $('input[type=file]').change(function(){
+var filename = $(this).val().split('\\').pop();
+var idname = $(this).attr('id');
+$('.'+idname).next().find('span').html(filename);
+});
+});

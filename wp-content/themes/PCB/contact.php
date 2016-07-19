@@ -42,7 +42,7 @@ Template Name: Contact
 
           </div>
           <div id="fluid">
-            Form
+            <?php the_field('right_column'); ?>
           </div>
         </div>
       </div>
