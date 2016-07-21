@@ -31,7 +31,7 @@ Template Name: Homepage
 
 </section>
 
-<div id="content" class="c-1">
+<main id="content" class="c-1 left">
   <div class="inner">
     <section class="c-1">
       <h1>From Planning to Perfection</h1>

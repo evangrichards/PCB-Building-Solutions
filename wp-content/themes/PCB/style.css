@@ -438,8 +438,8 @@ textarea:focus { outline:none; border-color: #b59157; }
 
 .page-template-contact p.hide_this {
 	float: left;
-	width: 18.55%;
-	margin: 0 1.75% 0 0;
+	width: 100%;
+	margin: 0 0 20px 0;
 	height: 120px;
 	border-radius: 4px;
 	position: relative;
@@ -525,7 +525,6 @@ section.grey-content .position-me p.notice { font-size: 14px; display: block; wi
 ========================================================================= */
 
 /* Grid */
-
 .c-1 {
 	width: 100%;
 	clear: both;
@@ -752,12 +751,9 @@ header {
   margin-bottom: 403px;
 }
 
-	#content .inner {
-		/*background: #fff;*/
-		/*padding: 80px 30px;*/
+	.page-template-homepage #content .inner {
+		overflow: visible;
 	}
-
-
 
 footer {
 	background: #171717;
@@ -814,6 +810,9 @@ footer {
 	.contact-cta p { color: #b59157; line-height: 1.2em; margin-left: 15px;}
 		.contact-cta a:not(.btn) { color: #b59157; }
 
+/* Homepage */
+
+
 /* Section types */
 .primary-content,
 .grey-content { padding: 0 0 200px 0; float:left; }
@@ -836,6 +835,8 @@ footer {
 .position-me { max-width: 1100px; width: 100%; margin-top: -150px; }
 	section:nth-child(even) .position-me { float: left; }
 	section:nth-child(odd) .position-me{ float: right; }
+
+	.page-template-homepage .position-me { max-width: none; background: #fff; padding: 50px;}
 
 	.primary-content h2,
 	.grey-content h2 {
@@ -896,7 +897,7 @@ footer {
 			}
 
 .boxes {
-	background: #1f1f21;
+	background: #212121;
 	padding: 70px 30px 80px 30px;
 }
 	.box-wrap {
