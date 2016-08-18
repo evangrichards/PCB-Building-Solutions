@@ -1,7 +1,27 @@
 <?php get_header(); ?>
 
-<section class="c-1 hero map">
-  Map here
+<?php
+$the_query_map = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order' ) );
+
+if($the_query_map->have_posts()) :
+while($the_query_map->have_posts()):
+$the_query_map->the_post();
+$the_ID = get_the_ID();
+$get_google_map = get_field('map_location', $value);
+
+$output_map[$the_ID]['map'] = '<div class="marker" data-lat="'.$get_google_map['lat'].'" data-lng="'.$get_google_map['lng'].'"></div>';
+
+endwhile; endif;
+wp_reset_postdata();
+wp_reset_query();
+?>
+
+<section class="c-1 hero map" id="map">
+  <div class="acf-map">
+    <?php foreach( $output_map as $key => $map_marker ):
+            echo $map_marker['map'];
+          endforeach; ?>
+  </div>
 </section>
 
 <main id="content" class="c-1 left">
@@ -35,7 +55,11 @@
     <div class="c-1 grid">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <a href="<?php the_permalink(); ?>" class="grid-item <?php $tags = get_tags(); foreach ( $tags as $tag ) { $html = "{$tag->slug} "; echo $html; } ?>">
+      <a href="<?php the_permalink(); ?>" class="grid-item <?php $post_cats = get_the_category();
+if ( $post_cats ) {
+foreach ( $post_cats as $cat ) {?>
+<?php echo $cat->category_nicename;?>
+<?php    }} ?>">
         <?php
         $image = get_field('image');
         $size = 'medium';

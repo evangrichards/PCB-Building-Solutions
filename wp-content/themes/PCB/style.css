@@ -985,9 +985,19 @@ footer {
 	#testimonials .rslides_nav.prev { margin-left: 0px;}
 
 /* Category */
-.map { background: pink; padding: 30em 0 }
+.acf-map {
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}
+
 .grid { /* Masonry container */
-    column-count: 4;
+		column-count: 4;
     column-gap: 30px;
 		padding-top: 30px;
 }

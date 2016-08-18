@@ -1,7 +1,27 @@
 <?php get_header(); ?>
 
-<section class="c-1 hero map">
-  Map here
+<?php
+$the_query_map = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'menu_order' ) );
+
+if($the_query_map->have_posts()) :
+while($the_query_map->have_posts()):
+$the_query_map->the_post();
+$the_ID = get_the_ID();
+$get_google_map = get_field('map_location', $value);
+
+$output_map[$the_ID]['map'] = '<div class="marker" data-lat="'.$get_google_map['lat'].'" data-lng="'.$get_google_map['lng'].'"></div>';
+
+endwhile; endif;
+wp_reset_postdata();
+wp_reset_query();
+?>
+
+<section class="c-1 hero map" id="map">
+  <div class="acf-map">
+    <?php foreach( $output_map as $key => $map_marker ):
+            echo $map_marker['map'];
+          endforeach; ?>
+  </div>
 </section>
 
 <main id="content" class="c-1 left">
@@ -12,30 +32,20 @@
           <strong>Project Type:</strong>
         </li>
         <?php
-        $tags = get_tags();
-        if ( $tags ) {
-          foreach ( $tags as $tag ) {
-            echo '<li>';
-
-            if ( (int) $tag->term_id === get_queried_object_id() )
-                echo "<b>$tag->name</b>";
-            else
-                printf(
-                    '<a href="%1$s">%2$s</a>',
-                    get_tag_link( $tag->term_id ),
-                    $tag->name
-                );
-
-            echo '</li>';
-          }
-        }
+           wp_nav_menu( array(
+            'theme_location' => 'category-menu',
+            'container' => 'false',
+            'items_wrap' => '%3$s',
+            'fallback_cb' => 'wp_page_menu'
+            ));
         ?>
       </ul>
     </div>
+
     <div class="c-1 grid">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <a href="<?php the_permalink(); ?>" class="grid-item <?php $tags = get_tags(); foreach ( $tags as $tag ) { $html = "{$tag->slug} "; echo $html; } ?>">
+      <a href="<?php the_permalink(); ?>" class="grid-item ">
         <?php
         $image = get_field('image');
         $size = 'medium';

@@ -25,6 +25,14 @@ function my_jquery_enqueue() {
 
 function bao_scripts() {
 
+  if (is_category() || is_archive()) {
+    wp_register_script('maps', 'http' . ($_SERVER['SERVER_PORT'] == 443 ? 's' : '') . '://maps.googleapis.com/maps/api/js?key=AIzaSyBomLPnif_pTXUt7AJ7I4laGF2hJbrLwqc', false, null, true);
+    wp_enqueue_script('maps');
+
+    wp_register_script('map-init', get_template_directory_uri() . '/js/maps.js', false, null, true);
+    wp_enqueue_script('map-init');
+  }
+
 	wp_register_script('plugins', get_template_directory_uri() . '/js/plugins.js', false, null, true);
 	wp_register_script('scripts', get_template_directory_uri() . '/js/script.js', false, null, true);
 
@@ -41,30 +49,14 @@ add_action('wp_enqueue_scripts', 'bao_scripts', 11);
 $role_object = get_role( 'editor' );
 $role_object->add_cap( 'edit_theme_options' );
 
-/**
- * @desc Add tag called 'All' to all posts
- *
-add_action('save_post','add_tags_auto');
-function add_tags_auto($id) {
-	$add_tags = array(
-		'All'
-	);
-	$temp = array();
-	$tags = get_the_tags($id);
-	foreach ($tags as $tag)
-		$temp[] = $tag->name;
-	$tags = $temp;
 
-	$post = get_post($id);
+/* Google API Key - AIzaSyBomLPnif_pTXUt7AJ7I4laGF2hJbrLwqc */
+function my_acf_init() {
 
-	if ($post->post_type != 'post')
-		return false;
-
-	foreach ($add_tags as $t)
-		if (!in_array($t,$tags))
-			wp_add_post_tags($id,$add_tags);
+	acf_update_setting('google_api_key', 'AIzaSyBomLPnif_pTXUt7AJ7I4laGF2hJbrLwqc');
 }
-*/
+
+add_action('acf/init', 'my_acf_init');
 
 /**
  * @desc Change email address (that sends out registration emails etc.) from wordpress@mydomain.com to whatever I want
@@ -150,8 +142,9 @@ function add_wp3menu_support() {
 
 register_nav_menus(
         array(
-        'main-menu' => __('Primary Navigation'),
-        'footer-menu' => __('Footer menu')
+        'main-menu' => __('Primary navigation'),
+        'footer-menu' => __('Footer menu'),
+        'category-menu' => __('Category menu')
         )
      );
 }
