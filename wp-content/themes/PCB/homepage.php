@@ -32,19 +32,33 @@ Template Name: Homepage
 </section>
 
 <main id="content" class="c-1 left">
-  <div class="inner">
-    <section class="c-1">
-      <h1>From Planning to Perfection</h1>
-      <p>
-        More than just builders, <strong>PCB Building Solutions</strong> are an established firm of skilled tradesmen providing bespoke services including home rennovations, barn conversions, land & property searches, project management and much more.
-      </p>
-      <p>
-        <a href="#">How we can help you</a>
-      </p>
-    </section>
 
-  </div>
+  <section class="intro c-1">
+    <div class="inner">
+      <?php the_field('intro'); ?>
+    </div>
+  </section>
 
+  <section class="projects">
+    <div class="inner grid">
+      <?php
+        $exclude = get_the_ID();
+        $temp = $wp_query;
+        $wp_query= null;
+        $wp_query = new WP_Query();
+        $wp_query->query('posts_per_page=8');
+        while ($wp_query->have_posts()) : $wp_query->the_post();
+        if( $exclude != get_the_ID() ) {
+      ?>
+
+      <?php include('parts/post.php'); ?>
+
+      <?php } endwhile;?>
+      <?php $wp_query = null; $wp_query = $temp; wp_reset_query();?>
+    </div>
+  </section>
+
+  <?php include('parts/page-links.php'); ?>
   <?php include('parts/testimonials.php'); ?>
 </div>
 

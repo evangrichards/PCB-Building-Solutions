@@ -45,20 +45,7 @@ wp_reset_query();
     <div class="c-1 grid">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <a href="<?php the_permalink(); ?>" class="grid-item ">
-        <?php
-        $image = get_field('image');
-        $size = 'medium';
-        $thumb = $image['sizes'][ $size ];
-
-        if( !empty($image) ): ?>
-          <img src="<?php echo $thumb; ?>" alt="<?php the_title() ?>"/>
-        <?php endif; ?>
-        <h2><?php the_title() ?></h2>
-        <p>
-          <?php the_field('location');  ?><br />
-        </p>
-      </a>
+      <?php include('parts/post.php'); ?>
 
     <?php endwhile; endif; ?>
 

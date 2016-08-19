@@ -95,6 +95,7 @@ a, a:visited, a:hover, a:active { outline: 0; outline: none; }
 	background: #b59157;
 	color: #fff;
 	text-align: center;
+	border: none;
 	padding: 10px 25px;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -104,6 +105,7 @@ a, a:visited, a:hover, a:active { outline: 0; outline: none; }
 
 	.btn:hover { color: #fff; background-color: #999; }
 
+	.btn:focus { outline:none; }
 
 
 /* ==========================================================================
@@ -579,7 +581,7 @@ section.grey-content .position-me p.notice { font-size: 14px; display: block; wi
   margin-left: -40px;
 }
 
-#fluid { overflow:hidden; padding: 0 0 0 40px; }
+#fluid { overflow:hidden; padding: 0 30px 0 40px; }
 
 .keyline {
 	display: block;
@@ -811,6 +813,12 @@ footer {
 		.contact-cta a:not(.btn) { color: #b59157; }
 
 /* Homepage */
+.intro {
+	padding: 50px 30px;
+}
+
+.projects .grid { position: relative; }
+.proje
 
 
 /* Section types */
@@ -934,6 +942,7 @@ footer {
 		display: block;
 	}
 
+		.boxes .box-title .btn:hover { color: #fff !important;}
 	.icon.circle {
 		background:#b59157;
 		width: 60px;
@@ -965,11 +974,12 @@ footer {
 	.meta:first-of-type { border-top: 1px solid #eee; padding-top: 20px; }
 .meta h5 { font-family: 'Karla', Helvetica, Arial, sans-serif; text-transform: uppercase; font-size: 12px; margin-bottom: 0; letter-spacing: .05em;}
 .post-links { padding: 30px; background: #f8f8f8; margin-top: -45px; margin-bottom: 20px; }
-	.post-links a { border: none; padding: 0; }
+	.post-links a { border: none; padding: 0; color: #333;}
+		.post-links li.current-menu-item a { color: #b59157 }
 		.post-links i { font-size: 20px; position: relative; margin-right: 5px; top: 5px; }
 
 /* Testimonials */
-#testimonials { background: #f8f8f8; padding: 50px; }
+#testimonials { background: #f8f8f8; padding: 50px 30px; }
 #testimonials .rslides li { padding:0 0 80px 0; }
 #testimonials blockquote { border: none; padding: 0; margin: 0 0 20px 0; font-size: 48px; font-weight: 800; color: #171717; line-height: 1.2em}
 
@@ -1008,9 +1018,27 @@ a.grid-item { /* Masonry bricks or child elements */
     width: 100%;
 		border: none;
 		color: #999;
+		position: relative;
 }
+	.img-wrap { position: relative; margin-bottom: 10px; }
+	a.grid-item .overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		top: 0;
+		right:0;
+		bottom:0;
+		left:0;
+		z-index: 10;
+		text-align: center;
+		opacity: 0;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+	}
 
-	.grid-item img { margin-bottom: 10px; }
+		a.grid-item:hover .overlay { opacity:1; }
 
 	.grid-item h2,
 	.grid-item p { margin-bottom: 0; font-size: 18px;}
