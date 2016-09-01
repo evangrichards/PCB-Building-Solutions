@@ -69,7 +69,7 @@ a,
 a:visited,
 nav ul li.current-menu-item a,
 nav ul li.current-menu-item a:visited,
-nav ul li a.tel {
+.card.phone div.tel {
 	color: #b59157;
 	text-decoration: none;
 	border-bottom: 1px solid #b59157;
@@ -78,10 +78,12 @@ nav ul li a.tel {
 	     -o-transition: all 0.25s ease-in-out;
 			    transition: all 0.25s ease-in-out;
 }
+
 a:hover,
 .contact-cta a:not(.btn):hover,
 nav ul li a:hover { color: #999 !important; border-color: #999 !important; }
-a:focus { outline: none; }
+a:focus,
+button:focus { outline: none; }
 
 footer a,
 nav a { border: none;}
@@ -161,19 +163,22 @@ blockquote,
 
 ul, ol { list-style-type: disc; }
 ol { list-style-type: decimal; }
-nav ul { margin: 0; padding: 0; }
+nav {background: rgba(0, 0, 0, 0.25);}
+nav ul { margin: 0; padding: 0 ; }
 
-nav ul { float: right; }
-	nav ul li { display: inline-block; margin-left: 20px; }
-		nav ul li a,
-		nav ul li a:visited {
-			display: block;
-			color: #fff;
-		}
-		nav ul li a.tel { display: inline-block; border:none;}
+nav ul li { display: inline-block;  }
+	nav ul li a,
+	nav ul li a:visited {
+		display: block;
+		color: #fff;
+		padding:15px 18px;
+	}
+	nav ul li a.tel { display: inline-block; border:none;}
 
-
-
+	nav ul li:last-child { float: right;   }
+	nav ul li:last-child a,
+	nav ul li:last-child a:visited { background: rgba(0, 0, 0, 0.5); }
+	nav ul li:last-child a:hover { color: #fff !important; background: #b59157; border-bottom: 1px solid #b59157}
 
 /* ==========================================================================
 5 Embedded Content
@@ -188,6 +193,8 @@ img {
 	float: left;
 	border: none;
 }
+
+	.logo img { max-width: 80%;}
 
 audio,
 canvas,
@@ -302,6 +309,18 @@ img.alignleft { float: left; margin-right: 30px; }
 }
 .i-workman:before {
   content: "\70";
+}
+.i-burger:before {
+  content: "\71";
+}
+.i-close:before {
+  content: "\72";
+}
+.i-mail:before {
+  content: "\73";
+}
+.i-phone:before {
+  content: "\74";
 }
 
 /*! Responsive slides - http://responsiveslides.com v1.54 by @viljamis */
@@ -522,6 +541,44 @@ label span {
 
 section.grey-content .position-me p.notice { font-size: 14px; display: block; width: 100%; position: absolute; top:63px; left:30px; color: #a8a8a8; }
 
+/* @group Errors */
+
+input.wpcf7-not-valid {	border-bottom: 1px solid #FF4C4C; }
+
+span.wpcf7-not-valid-tip {
+	background: #FF4c4c !important;
+	color: #fff !important;
+	font-size: 12px !important;
+	display: inline-block !important;
+	padding: 0 !important;
+	line-height: normal !important;
+	vertical-align: top;
+	padding: 5px 20px !important;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	margin-top: -1px;
+	width: 100%;
+}
+
+	span.wpcf7-form-control-wrap.services span.wpcf7-not-valid-tip { margin-top: -1px !important; }
+
+	.wpcf7-validation-errors { display: none !important; }
+
+/* @end */
+
+.wpcf7-form.sent { display:none; }
+
+#thankYou {
+ display: none;
+ text-align: center;
+ position: relative;
+ text-align: center;
+ padding: 40px 30px 0 30px;
+}
+
+	#thankYou h6,
+	#thankYou p { margin-bottom: 15px;	}
+
 /* ==========================================================================
 7 Author's custom styles
 ========================================================================= */
@@ -567,7 +624,7 @@ section.grey-content .position-me p.notice { font-size: 14px; display: block; wi
 
 .inner {
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1600px;
 	margin: 0 auto;
   overflow: hidden;
 	position: relative;
@@ -690,18 +747,41 @@ hr {
 /* /improvements */
 
 header {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
-	overflow: hidden;
+	overflow: visible;
 	z-index: 10;
+	background: rgba(0, 0, 0, 0.75);
 }
 
-	header .inner {
-		background: #040404;
-		padding: 30px;
+	.top { padding: 30px; z-index: 11; }
+
+	.vcard .card {
+		font-size: 18px;
+		padding: 10px 0 10px 20px;
+		color: #fff;
+		float: left;
+		min-height: 60px;
+		margin-top: 3px;
 	}
+
+		.vcard .card span { color: #999; font-size: 14px; display: block;}
+		.vcard .card a { color: #fff; border-bottom: none;}
+		.vcard .card a:hover { color: #b59157 !important;  }
+		.vcard .card i {
+			font-size: 30px;
+	    color: #b59157;
+	    position: relative;
+	    margin-right: 10px;
+	    top: 4px;
+		}
+		.vcard .card.online i { font-size: 18px; margin-right: 0;}
+
+		.vcard .card.online,
+		.vcard .card.email,
+		.vcard .card.phone { display: none; }
 
 .hero {
 	position: fixed;
@@ -735,6 +815,7 @@ header {
 			.hero hgroup .center { padding-left: 30px; }
 			.hero hgroup h1 ,
 			.hero hgroup h2 { color: #fff; }
+			.hero hgroup h1 { margin-top:50px; }
 
 			.hero hgroup h2 { font-weight: 300; }
 			.hero hgroup a { border-bottom: none; }
@@ -818,7 +899,6 @@ footer {
 }
 
 .projects .grid { position: relative; }
-.proje
 
 
 /* Section types */
@@ -887,22 +967,20 @@ footer {
 
 	.generic-cta .inner { max-width: 600px; margin: 0 auto; }
 
-.grey-content {
-}
-	.grey-content .heading { margin-bottom: 20px; }
-		section.grey-content .position-me h2 { margin-bottom: 0; width: auto; color: #222; padding-top: 20px; border-top-color: #b59157; display: inline-block;}
-		section.grey-content .position-me p { color: #666; }
+.grey-content .heading { margin-bottom: 20px; }
+	section.grey-content .position-me h2 { margin-bottom: 0; width: auto; color: #222; padding-top: 20px; border-top-color: #b59157; display: inline-block;}
+	section.grey-content .position-me p { color: #666; }
 
-	.grey-content .position-me { background: #f8f8f8; padding: 50px; }
+.grey-content .position-me { background: #f8f8f8; padding: 50px; }
 
-			.grey-content ul { margin: 0; padding: 0 30px 0 0; list-style: none; }
-			.grey-content ul li { color: #b59157; margin: 0 0 10px 0; font-size: 20px; padding-left: 25px; position: relative; }
-			.grey-content ul li:before {
-				font-size: 14px;
-				position: absolute;
-				left:0;
-				top: 7px;
-			}
+		.grey-content ul { margin: 0; padding: 0 30px 0 0; list-style: none; }
+		.grey-content ul li { color: #b59157; margin: 0 0 10px 0; font-size: 20px; padding-left: 25px; position: relative; }
+		.grey-content ul li:before {
+			font-size: 14px;
+			position: absolute;
+			left:0;
+			top: 7px;
+		}
 
 .boxes {
 	background: #212121;
@@ -943,7 +1021,7 @@ footer {
 	}
 
 		.boxes .box-title .btn:hover { color: #fff !important;}
-	.icon.circle {
+		.icon.circle {
 		background:#b59157;
 		width: 60px;
 		height: 60px;
@@ -1089,10 +1167,32 @@ a.grid-item { /* Masonry bricks or child elements */
 ========================================================================= */
 
 /* Huge screens */
-@media	screen and (min-width: 1301px) {
+@media	screen and (min-width: 940px) {
 
+	.vcard .card.phone,
+	.vcard .card.email { margin-right:0 !important; display: block; border-right: 1px solid rgba(255,255,255, 0.1); }
+
+	.vcard .card.phone { padding-right: 20px !important; }
+
+	.vcard .card.email { border-right:none; padding-right:0;}
 
 }
+
+@media	screen and (min-width: 740px) {
+
+	.vcard .card.phone {
+		display: block; margin-right:0 !important;
+		padding-right: 20px !important; border-right: 1px solid rgba(255,255,255, 0.1);
+	}
+
+}
+
+@media	screen and (min-width: 610px) {
+
+	.vcard .card.phone { display: block; margin-right: 70px; padding: 10px 0 0px 0px; border-right: 1px solid rgba(255,255,255, 0.1);}
+
+}
+
 
 /* iPad portrait */
 @media	screen and (min-width: 641px) and (max-width: 959px) {
@@ -1103,6 +1203,78 @@ a.grid-item { /* Masonry bricks or child elements */
 	.primary-content:nth-child(even) #fluid { margin-left: 0px; }
 	.primary-content:nth-child(even) #fixed { margin-right: 40px; }
 	.primary-content:nth-child(even) #fluid { padding-left: 40px; }
+
+	.vcard {padding-right: 75px; }
+
+	.vcard .card.phone { display: block; margin-right: 0px; padding: 10px 20px 0px 0px}
+
+	#burger {
+		display: block;
+		position: fixed;
+		z-index: 25;
+		right: 20px;
+		top: 39px;
+		width: 36px;
+		height: 36px;
+		transition: none;
+		font-size: 24px;
+		background: none;
+		padding: 0;
+		color: #fff;
+		border: none;
+	}
+
+		#burger.close{	color: #b59157;}
+
+		#close-quote { z-index: 26;}
+
+		nav {
+			width: 100%;
+			padding: 110px 20px 20px 20px;
+			overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			-webkit-transform: translateY(-100%);
+			-ms-transform: translateY(-100%);
+			transform: translateY(-100%);
+			z-index: 2;
+			background: #171717;
+			-webkit-transition: all 0.2s;
+			-moz-transition: all 0.2s;
+			-ms-transition: all 0.2s;
+			-o-transition: all 0.2s;
+			transition: all 0.2s;
+		}
+
+		nav.mobile-open {
+			position: fixed;
+			-webkit-transform: translateY(0%);
+					-ms-transform: translateY(0%);
+							transform: translateY(0%);
+		}
+
+		nav ul { padding: 0; }
+		nav ul li,
+		nav ul li:first-child { display: block; margin: 0;}
+		nav ul li a, nav ul li a:visited { color: #fff; padding:10px 0;  }
+		nav ul li:last-child { float: none;   }
+		nav ul li:last-child a,
+		nav ul li:last-child a:hover { background: none; border:none; }
+		nav ul li:last-child a:hover { color: #999 !important; }
+
+		header { overflow: visible; height: 100px; }
+			header .inner { padding: 0; }
+		.logo img { max-width: 60%; margin-left: 20px;}
+		.top {
+			padding: 20px 0;
+			position: fixed;
+			z-index: 21;
+		}
+
+		.inner { padding: 0 20px; }
 
 }
 
@@ -1130,47 +1302,72 @@ a.grid-item { /* Masonry bricks or child elements */
 
 		.bg-image { background-attachment: scroll; }
 
+		.vcard .card.phone { display: none; }
+
 		#burger {
 			display: block;
-			position: absolute;
+			position: fixed;
+			z-index: 25;
 			right: 20px;
-			top: 27px;
-			background-color: pink;
-			width: 30px;
-			height: 30px;
+			top: 39px;
+			width: 36px;
+			height: 36px;
 			transition: none;
-			color: blue;
+			font-size: 24px;
+			background: none;
+			padding: 0;
+			color: #fff;
+			border: none;
 		}
 
-			#burger.close {	color: aqua}
+			#burger.close{	color: #b59157;}
+
+			#close-quote { z-index: 26;}
 
 			nav {
-		    width: 100%;
-		    padding: 0 20px;
-		    overflow: scroll;
-		    -webkit-overflow-scrolling: touch;
-		    position: fixed;
-		    top: 70px;
-		    left: 0;
-		    height: 100%;
-		    -webkit-transform: translateX(100%);
-		    -ms-transform: translateX(100%);
-		    transform: translateX(100%);
+				width: 100%;
+				padding: 110px 20px 20px 20px;
+				overflow: scroll;
+				-webkit-overflow-scrolling: touch;
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100%;
+				-webkit-transform: translateY(-100%);
+				-ms-transform: translateY(-100%);
+				transform: translateY(-100%);
 				z-index: 2;
-		    background: #fff;
-		    -webkit-transition: all 0.2s;
-		    -moz-transition: all 0.2s;
-		    -ms-transition: all 0.2s;
-		    -o-transition: all 0.2s;
-		    transition: all 0.2s;
+				background: #171717;
+				-webkit-transition: all 0.2s;
+				-moz-transition: all 0.2s;
+				-ms-transition: all 0.2s;
+				-o-transition: all 0.2s;
+				transition: all 0.2s;
 			}
 
 			nav.mobile-open {
 				position: fixed;
-				border-top: 1px solid #f7f7f7;
-				-webkit-transform: translateX(0px);
-						-ms-transform: translateX(0px);
-								transform: translateX(0px);
+				-webkit-transform: translateY(0%);
+						-ms-transform: translateY(0%);
+								transform: translateY(0%);
+			}
+
+			nav ul { padding: 0; }
+			nav ul li,
+			nav ul li:first-child { display: block; margin: 0;}
+			nav ul li a, nav ul li a:visited { color: #fff; padding:10px 0;  }
+			nav ul li:last-child { float: none;   }
+			nav ul li:last-child a,
+			nav ul li:last-child a:hover { background: none; border:none; }
+			nav ul li:last-child a:hover { color: #999 !important; }
+
+			header { overflow: visible; height: 100px; }
+				header .inner { padding: 0; }
+			.logo img { max-width: 60%; margin-left: 20px;}
+			.top {
+				padding: 20px 0;
+				position: fixed;
+				z-index: 21;
 			}
 
 			#fixed { margin-left: 0px; }

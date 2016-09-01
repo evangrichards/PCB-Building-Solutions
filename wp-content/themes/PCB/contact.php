@@ -43,6 +43,13 @@ Template Name: Contact
           </div>
           <div id="fluid">
             <?php the_field('right_column'); ?>
+            <div id="thankYou">
+              <h1>Success!</h1>
+              <p>
+                Thank you for sending us your details.<br/>
+                One of the team will be in touch with you shortly.
+              </p>
+            </div>
           </div>
         </div>
       </div>

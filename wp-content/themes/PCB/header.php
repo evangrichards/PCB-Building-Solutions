@@ -43,7 +43,7 @@
 <body <?php body_class(); ?>>
 <!--[if lt IE 8]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-<header>
+<!--<header>
   <div class="inner">
     <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="ico logo"><img src="<?php bloginfo('template_url'); ?>/img/logo.png"/></a>
 
@@ -63,6 +63,50 @@
       </ul>
     </nav>
     <button id="burger"><i class="i-menu"></i></button>
+  </div>
+</header>-->
+
+<header>
+    <div class="top c-1">
+      <div class="inner">
+        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" class="ico logo left"><img src="<?php bloginfo('template_url'); ?>/img/logo.svg"/></a>
+        <div class="vcard right">
+          <div class="card phone">
+            <i class="i-phone left"></i>
+            <div class="left">
+              <span>Call us:</span>
+              <div>
+                <a href="tel:<?php the_field('primary_telephone','option'); ?>"><?php the_field('primary_telephone','option'); ?></a> /
+                <a href="tel:<?php the_field('secondary_telephone','option'); ?>"><?php the_field('secondary_telephone','option'); ?></a>
+              </div>
+            </div>
+          </div>
+          <div class="card email last">
+            <i class="i-mail left"></i>
+            <div class="left">
+              <span>Email us:</span>
+              <a href="mailto:<?php the_field('email_address','option'); ?>"><?php the_field('email_address','option'); ?></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="c-1 round">
+      <div class="inner">
+        <ul>
+          <?php
+             wp_nav_menu( array(
+              'theme_location' => 'main-menu',
+              'container' => 'false',
+              'items_wrap' => '%3$s',
+              'fallback_cb' => 'wp_page_menu'
+              ));
+          ?>
+        </ul>
+      </div>
+    </nav>
+    <button id="burger"><i class="i-burger"></i></button>
   </div>
 </header>
 
