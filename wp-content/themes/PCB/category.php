@@ -27,7 +27,8 @@ wp_reset_query();
 <main id="content" class="c-1 left">
   <div class="inner">
     <div class="c-1 filters post-links">
-      <ul>
+      <button class="filter-toggle btn">Filter</button>
+      <ul class="filter-list">
         <li>
           <strong>Project Type:</strong>
         </li>

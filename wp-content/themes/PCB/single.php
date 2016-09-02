@@ -11,7 +11,7 @@
       <div class="c-2">
         <a href="/tags/all/" class="left" title="Back to all projects"><i class="i-arrow-left"></i>Back to all projects</a>
       </div>
-      <div class="c-2">
+      <div class="c-2 next-prev">
         <?php previous_post_link('%link', '- Previous', TRUE); ?>
         <?php next_post_link('%link', '+ Next', TRUE); ?>
       </div>

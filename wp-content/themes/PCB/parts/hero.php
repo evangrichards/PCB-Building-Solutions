@@ -10,7 +10,11 @@
           <?php } ?>
         </h1>
         <?php if (get_field('sub_heading')) {?><h2><?php the_field('sub_heading'); ?></h2><?php } ?>
-        <a href="#page-content" class="scrollto animated flash"><i class="i-arrow-down"></i></a>
+        <a href="#page-content" class="scrollto">
+          <div class="arrow arrow-1"></div>
+          <div class="arrow arrow-2"></div>
+          <div class="arrow arrow-3"></div>
+        </a>
       </div>
     </hgroup>
   </div>

@@ -43,7 +43,7 @@ textarea,
 	-webkit-font-smoothing: antialiased;
 }
 
-	input:focus { border-color: #0A5387 !important;	}
+	input:focus { border-color: #222 !important;	}
 
 #login {
 	position: relative;
@@ -71,7 +71,7 @@ textarea,
 	text-align: center;
 	overflow: hidden;
 	padding: 80px 0;
-	background: url('../img/logo.jpg') no-repeat center center;
+	background: url('../img/logo-dark.svg') no-repeat center center;
 }
 
 .powered-wrap {
@@ -87,7 +87,7 @@ textarea,
 
 .powered-wrap a,
 .powered-wrap a:visited { display: inline-block; width: auto; text-decoration: none; color: #999 !important; }
-.powered-wrap a:hover { color:  #0A5387 !important; }
+.powered-wrap a:hover { color:  #222 !important; }
 
 	.powered-by {
 		position: relative;
@@ -143,7 +143,7 @@ textarea,
 		border: none;
 		padding: 10px 25px;
 		color: #fff !important;
-		background: #0A5387;
+		background: #222;
 		font-size: 14px;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -225,4 +225,4 @@ textarea,
 		  max-width: 400px;
 		  margin: 0 auto;
 	}
-		.login #nav a:hover, .login #backtoblog a:hover { color: #0A5387!important; }
+		.login #nav a:hover, .login #backtoblog a:hover { color: #222!important; }

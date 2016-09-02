@@ -44,7 +44,7 @@
           </p>
 
           <p>
-          <a href="#hero" class="scrollto top"><i class="i-arrow-up"></i>Top</a>
+          <a href="#hero" class="scrollto top-link"><i class="i-arrow-up"></i>Top</a>
           </p>
 
         </div>

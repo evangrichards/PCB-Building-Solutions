@@ -92,20 +92,22 @@
       </div>
     </div>
 
-    <nav class="c-1 round">
-      <div class="inner">
-        <ul>
-          <?php
-             wp_nav_menu( array(
-              'theme_location' => 'main-menu',
-              'container' => 'false',
-              'items_wrap' => '%3$s',
-              'fallback_cb' => 'wp_page_menu'
-              ));
-          ?>
-        </ul>
-      </div>
-    </nav>
+    <div class="inner--nav">
+      <nav class="c-1 round ">
+        <div class="inner">
+          <ul>
+            <?php
+               wp_nav_menu( array(
+                'theme_location' => 'main-menu',
+                'container' => 'false',
+                'items_wrap' => '%3$s',
+                'fallback_cb' => 'wp_page_menu'
+                ));
+            ?>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <button id="burger"><i class="i-burger"></i></button>
   </div>
 </header>

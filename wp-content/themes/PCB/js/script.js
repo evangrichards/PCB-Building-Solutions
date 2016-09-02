@@ -2,6 +2,30 @@
 
 $(document).ready(function () {
 
+	// Sticky Nav
+	function updateNavBar(){
+		if($(window).scrollTop() > 124){
+			$('header .inner--nav').addClass('fixed')
+		}else{
+			$('header .inner--nav').removeClass('fixed')
+		}
+	}
+
+	if ($(window).width() > 959) {
+		updateNavBar();
+		$(window).scroll(updateNavBar);
+	}
+
+	$(window).resize(function(){
+		if ($(window).width() > 959) {
+			updateNavBar();
+			$(window).scroll(updateNavBar);
+		}
+		else{
+			$('header .inner--nav').removeClass('fixed')
+		}
+	});
+
 	// Slider
 	$(".rslides").responsiveSlides({
 		auto: true,
@@ -11,6 +35,13 @@ $(document).ready(function () {
 		prevText: "",
   	nextText: ""
 	});
+
+	// Apply toggle for filters
+  if ($(window).width() < 960) {
+    $(".filter-toggle").click(function(){
+      $(".filter-list").toggle();
+    });
+  }
 
 	// Initiate fade in/out and slight movement on scroll of hero section on homepage
 	var $tagline = $('.hero hgroup');
