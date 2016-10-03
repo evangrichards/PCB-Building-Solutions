@@ -82,8 +82,7 @@ nav ul li.current-menu-parent a:visited,
 }
 
 a:hover,
-.contact-cta a:not(.btn):hover,
-nav ul li a:hover { color: #999 !important; border-color: #999 !important; }
+.contact-cta a:not(.btn):hover { color: #999; border-color: #999; }
 a:focus,
 button:focus { outline: none; }
 
@@ -181,7 +180,8 @@ nav ul li { display: inline-block;  }
 	nav ul li:last-child { float: right;   }
 	nav ul li:last-child a,
 	nav ul li:last-child a:visited { background: rgba(0, 0, 0, 0.5); }
-	nav ul li:last-child a:hover { color: #fff !important; background: #b59157; border-bottom: 1px solid #b59157}
+	nav ul li a:hover { color: #999; border-color: #999; }
+	nav ul li:last-child a:hover { color: #fff; background: #b59157; border-bottom: 1px solid #b59157}
 
 	nav .inner { overflow: visible; }
 
@@ -949,6 +949,7 @@ footer {
 
 		footer a:hover { color: #999; }
 		footer a.top-link i { margin-left: -4px; margin-right: 5px;}
+		footer a.btn:hover { color: #fff; }
 
 	.row {padding: 30px 0; }
 
@@ -1168,7 +1169,7 @@ footer {
 .grid { /* Masonry container */
 		column-count: 4;
     column-gap: 30px;
-		padding-top: 30px;
+		padding: 30px 30px 0 30px;
 }
 
 a.grid-item { /* Masonry bricks or child elements */

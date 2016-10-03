@@ -1,6 +1,6 @@
 <div class="contact-cta c-1">
   <div class="left">
-    <a href="/contact" class="btn">Make an enquiry</a>
+    <a href="<?php bloginfo('url') ?>/contact" class="btn">Make an enquiry</a>
   </div>
 
   <div class="call-us left">

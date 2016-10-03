@@ -1,0 +1,625 @@
+/* ==========================================================================
+	Contents:
+	1 	Base
+	2 	Links
+	3 	Typography
+	4 	Lists
+	5 	Embedded content
+	6 	Forms
+	7 	Author's custom styles
+	8 	IE fixes
+	9	@Media
+============================================================================= */
+
+/* ==========================================================================
+	1 Base
+	========================================================================= */
+
+	@import 'normalize.css';
+
+	html {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		line-height: normal; }
+
+	body { margin: 0; -webkit-tap-highlight-color: rgb(255,255,158); }
+
+	html, body { height: 100%; }
+
+	html,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: "adobe-caslon-pro", Helvetica, Arial, sans-serif;
+		text-rendering: optimizeLegibility;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    color: #444; }
+
+	* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* ==========================================================================
+	2 Links
+	========================================================================= */
+
+	a,
+	a:visited { color: #cbb179; text-decoration: none; }
+	a:hover { color: #222; }
+	a:focus { outline: none; }
+
+	a, a:visited, a:hover, a:active { outline: 0; outline: none; }
+
+
+
+/* ==========================================================================
+	3 Typography
+	========================================================================= */
+
+	/* @group Global Font Styles */
+
+	h1 { font-size: 34px;  line-height: 1.2em; }
+	h2 { font-size: 30px; letter-spacing: .025em; line-height: 1.3em; }
+	h3 { font-size: 26px; letter-spacing: .025em; line-height: 1.3em; }
+	h4 { font-size: 22px; letter-spacing: .025em; line-height: 1.3em; }
+	h5, h6 { font-size: 20px; letter-spacing: .025em; line-height: 1.3em; }
+
+	p, ul, ol, blockquote { font-size: 20px; line-height: 1.6em; margin-bottom: 25px; }
+
+	h1, h2, h3, h4, h5, h6 { margin-bottom: 15px; font-weight: 300; }
+
+	.logo {
+		padding: 0;
+		line-height: normal;
+		margin: 60px 0 0 -142px;
+		text-transform: uppercase;
+		font-size: 16px;
+		width: 285px;
+		left: 50%;
+		position: absolute;
+		height: 55px;
+		display: inline-block;
+		color: #fff;
+	}
+
+	/* @end */
+
+	blockquote { padding: 10px 25px; border-left: 3px solid rgba(114, 114, 114, .25); }
+
+
+/* ==========================================================================
+	4 Lists
+	========================================================================= */
+
+	ul, ol { list-style-type: disc; }
+	ol { list-style-type: decimal; }
+
+	nav { margin-top: 15px;}
+
+	nav ul { margin: 0; padding: 0; list-style: none; }
+
+	nav ul li {
+		font-family: "adobe-caslon-pro", Georgia, Times, serif;
+		font-size: 22px;
+		float: left;
+		padding: 130px 0;
+		text-align: center;
+		color: #fff;
+		width: 50%;
+		border-right: 1px solid rgb(203,177,121);
+		border-right: 1px solid rgba(203,177,121, 0.75);
+	}
+
+		nav ul li:last-child {border:none;}
+
+	nav ul li a,
+	nav ul li a:visited {
+		display: block;
+		color: #fff;
+	}
+
+	.tel { color: #fff; }
+
+	nav ul li a:hover,
+	nav ul li i { color: #cbb179; }
+
+	nav ul li i {font-size: 40px; margin-bottom:30px; }
+	nav ul li > * { display: block;}
+	nav ul li .tel {display: inline-block;}
+
+	ul#fullscreen-slider {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+	ul#fullscreen-slider li {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+		ul#fullscreen-slider li.img0 {	background-image: url(../img/coming-soon/wheelers-cottage-back.jpg); }
+		ul#fullscreen-slider li.img1 {	background-image: url(../img/coming-soon/wheelers-cottage-front.jpg); }
+		ul#fullscreen-slider li.img2 {	background-image: url(../img/coming-soon/wheelers-cottage-back-2.jpg); }
+		ul#fullscreen-slider li.img3 {	background-image: url(../img/coming-soon/wheelers-cottage-internal.jpg); }
+
+
+
+/* ==========================================================================
+	5 Embedded Content
+	========================================================================= */
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	audio,
+	canvas,
+	img,
+	video { vertical-align: middle;}
+
+	/* Icons */
+	@font-face {
+	  font-family: "pcb";
+	  src:url("../type/pcb.eot");
+	  src:url("../type/pcb.eot?#iefix") format("embedded-opentype"),
+	    url("../type/pcb.woff") format("woff"),
+	    url("../type/pcb.ttf") format("truetype"),
+	    url("../type/pcb.svg#pcb") format("svg");
+	  font-weight: normal;
+	  font-style: normal;
+
+	}
+
+	[data-icon]:before {
+	  font-family: "pcb" !important;
+	  content: attr(data-icon);
+	  font-style: normal !important;
+	  font-weight: normal !important;
+	  font-variant: normal !important;
+	  text-transform: none !important;
+	  speak: none;
+	  line-height: 1;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+
+	[class^="i-"]:before,
+	[class*=" i-"]:before,
+	.rslides_nav.next:before,
+	.rslides_nav.prev:before {
+	  font-family: "pcb" !important;
+	  font-style: normal !important;
+	  font-weight: normal !important;
+	  font-variant: normal !important;
+	  text-transform: none !important;
+	  speak: none;
+	  line-height: 1;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+
+	.i-send:before {
+	  content: "\61";
+	}
+	.i-iphone:before {
+	  content: "\62";
+	}
+	.i-arrow-down:before {
+	  content: "\63";
+	}
+	.i-arrow-left:before,
+	.rslides_nav.prev:before {
+	  content: "\64";
+	}
+	.i-arrow-right:before,
+	.rslides_nav.next:before {
+	  content: "\65";
+	}
+	.i-arrow-up:before {
+	  content: "\66";
+	}
+	.i-bricks:before {
+	  content: "\67";
+	}
+	.i-chevron-down:before {
+	  content: "\68";
+	}
+	.i-diamond:before {
+	  content: "\69";
+	}
+	.i-minus:before {
+	  content: "\6a";
+	}
+	.i-pen-pencil:before {
+	  content: "\6b";
+	}
+	.i-plus:before {
+	  content: "\6c";
+	}
+	.i-speechmark-close:before {
+	  content: "\6d";
+	}
+	.i-speechmark-open:before {
+	  content: "\6e";
+	}
+	.i-upload:before {
+	  content: "\6f";
+	}
+	.i-workman:before {
+	  content: "\70";
+	}
+	.i-burger:before {
+	  content: "\71";
+	}
+	.i-close:before {
+	  content: "\72";
+	}
+	.i-mail:before {
+	  content: "\73";
+	}
+	.i-phone:before {
+	  content: "\74";
+	}
+
+
+/* ==========================================================================
+	6 Forms
+	========================================================================= */
+
+	fieldset {
+	    border: 0;
+	    margin: 0;
+	    padding: 0;
+	}
+
+	textarea {  resize: vertical; }
+
+	input,
+	textarea,
+	select {
+		-webkit-appearance: none;
+		-webkit-border-radius:0;
+		border-radius:0;
+	}
+
+/* ==========================================================================
+	7 Author's custom styles
+	========================================================================= */
+
+	/* Grid */
+
+	.c-1 {
+		width: 100%;
+		clear: both;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.c-2,
+	.c-3,
+	.c-4 {
+		width: 50%;
+		float: left;
+		position: relative;
+	}
+
+		.c-3 { width: 33.33%; }
+		.c-4 { width: 25%; }
+
+	/* /grid */
+
+	header {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		right: 50px;
+		text-align: center;
+		bottom: 50px;
+		z-index: 999;
+		background: rgb(0,0,0);
+		background: rgba(0,0,0,.65);
+	}
+
+	.content {
+		background: rgb(0, 0, 0);
+		background: rgba(0, 0, 0, 0.5);
+		max-width: 600px;
+		width: 100%;
+		padding: 50px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.inner {
+		max-width: 1300px;
+		width: 100%;
+		padding:30px;
+		margin: 0 auto;
+	}
+
+		.overview { padding: 100px 0; }
+
+		.overview .c-2 {
+			width: 30%;
+			margin-right: 6%;
+		}
+
+		.overview .c-2.last {padding-top: 86px;	}
+
+	.notice {
+		position: absolute;
+		bottom: 80px;
+		display: block;
+		text-align: center;
+		color: #fff;
+		font-size: 14px;
+		width: 100%;
+		font-style: italic;
+	}
+
+	/* @group Re-Usable classes */
+
+	.keyline {
+		max-width: 55px;
+		width: 100%;
+		display: block;
+		margin-bottom: 30px;
+		height: 1px;
+		border-top: 2px solid #444;
+	}
+
+	.left {	float: left; }
+	.right { float: right; }
+
+	.no-pad { padding: 0; }
+
+	.hidden {
+	    display: none !important;
+	    visibility: hidden;
+	}
+
+	.bg-image {
+		background-position: center center;
+		background-attachment: fixed;
+		-webkit-background-size: cover;
+		   -moz-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+	}
+
+	.center-wrapper {
+		min-height: 100%;
+		height:100%;
+		padding: 0;
+		display: table;
+		width: 100%;
+		position: absolute;
+		z-index: 3;
+	}
+
+		.center-wrapper .center {
+			display: table-cell;
+    		vertical-align: middle;
+		}
+
+	/* @end */
+
+	/* Improvements */
+
+	::-moz-selection {
+	    background: #b3d4fc;
+	    text-shadow: none;
+	}
+
+	::selection {
+	    background: #b3d4fc;
+	    text-shadow: none;
+	}
+
+	hr {
+	    display: block;
+	    height: 1px;
+	    border: 0;
+	    border-top: 1px solid #ccc;
+	    margin: 1em 0;
+	    padding: 0;
+	}
+
+	.clearfix:before,
+	.clearfix:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+
+	.clearfix:after { clear: both; }
+
+	/* For IE 6/7 only */
+	.clearfix { *zoom: 1; }
+
+	/* /improvements */
+
+
+
+
+
+
+
+
+/* ==========================================================================
+	8 IE Fixes
+	========================================================================= */
+	.browsehappy {
+	    margin: 0.2em 0;
+	    background: #ccc;
+	    color: #000;
+	    padding: 0.2em 0;
+	}
+
+
+
+/* ==========================================================================
+	9 @Media
+	========================================================================= */
+
+	/* Huge screens */
+	@media	screen and (min-width: 1301px) {
+
+
+	}
+
+	/* iPad portrait */
+	@media	screen and (min-width: 641px) and (max-width: 959px) {
+
+		header {
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right:0;
+		}
+		nav ul { max-width: 600px; width: 100%; margin: 0 auto; }
+		nav ul li {
+			display: block;
+			float: none;
+			border-right: none;
+			border-bottom: 1px solid #CBB179;
+			width: auto;
+			padding:50px;
+			margin: 0 50px;
+		}
+
+	}
+
+	/* Smartphones */
+	@media	screen and (max-width : 480px), /* Portrait */
+			screen and (max-width : 640px) /* Landscape */ {
+
+			/* @group Reset to normal positioning */
+
+			.center-wrapper,
+			.center {
+				width: 100%;
+				position: static;
+				float: left;
+				top: 0;
+				height: auto;
+				min-height:auto;
+				-webkit-transform: none !important;
+				    -ms-transform: none !important;
+				        transform: none !important;
+			}
+
+			/* @end */
+
+			.logo {
+				position: static;
+				left: auto;
+				margin: 30px auto;
+			}
+
+			.notice {
+				position: static;
+				bottom: auto;
+			}
+
+			header {
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right:0;
+			}
+			nav ul { max-width: 600px; width: 100%; margin: 0 auto; }
+			nav ul li {
+				display: block;
+				float: none;
+				border-right: none;
+				border-bottom: 1px solid #CBB179;
+				width: auto;
+				padding:50px;
+				margin: 0 50px;
+			}
+
+	}
+
+	/* High Resolution Devices */
+	@media print,
+	       (-o-min-device-pixel-ratio: 5/4),
+	       (-webkit-min-device-pixel-ratio: 1.25),
+	       (min-resolution: 120dpi) {
+
+	}
+
+	/* Print */
+	@media print {
+	    * {
+	        background: transparent !important;
+	        color: #000 !important; /* Black prints faster: h5bp.com/s */
+	        box-shadow: none !important;
+	        text-shadow: none !important;
+	    }
+
+	    a,
+	    a:visited {
+	        text-decoration: underline;
+	    }
+
+	    a[href]:after {
+	        content: " (" attr(href) ")";
+	    }
+
+	    abbr[title]:after {
+	        content: " (" attr(title) ")";
+	    }
+
+	    /*
+	     * Don't show links for images, or javascript/internal links
+	     */
+
+	    .ir a:after,
+	    a[href^="javascript:"]:after,
+	    a[href^="#"]:after {
+	        content: "";
+	    }
+
+	    pre,
+	    blockquote {
+	        border: 1px solid #999;
+	        page-break-inside: avoid;
+	    }
+
+	    thead {
+	        display: table-header-group; /* h5bp.com/t */
+	    }
+
+	    tr,
+	    img {
+	        page-break-inside: avoid;
+	    }
+
+	    img {
+	        max-width: 100% !important;
+	    }
+
+	    @page {
+	        margin: 0.5cm;
+	    }
+
+	    p,
+	    h2,
+	    h3 {
+	        orphans: 3;
+	        widows: 3;
+	    }
+
+	    h2,
+	    h3 {
+	        page-break-after: avoid;
+	    }
+	}
